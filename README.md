@@ -65,7 +65,7 @@ This was the hard part.  Ugh.
 
 [Again](https://www.atlassian.com/git/tutorials/dotfiles)
 
-register your github account with the local git.
+If you havent already (`gmdf config --list`) register your github account with the local git.
 
 ```
 git config --global user.name "eljfe"
