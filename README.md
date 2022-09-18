@@ -12,13 +12,18 @@ Tired of screwing up config settings.  There was an incident...
 
 ### 1. set it up locally
 
-The [general Idea](https://www.atlassian.com/git/tutorials/dotfiles) here. A few lines of code to set up a thing locally.  
 
 1.1 create a home/working directory  
-`git init --bare $HOME/.mydotfiles`
+`git init --bare $HOME/.dotfilerepo/.git`
    
-1.2 create an alias that maps the git command to the new directory/repo (my alias stands for **G**it **M**y **D**ot **F**iles)  
-`alias gmdf='/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'`
+1.2 zsh alias in rc  
+
+```.zshrc
+dotfile() { 
+	git --git-dir="${HOME}/.dotfilerepo/.git/" --work-tree="$HOME" "$@" ; 
+}
+```
+This function just alias all your git commands.
 
 1.3 this flags then repo (for what it does I do not know)   
 `gmdf config --local status.showUntrackedFiles no`
@@ -98,7 +103,10 @@ gmdf push
 
 ----
 
-[Somewhat useful](https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad) this walks you through the process of working with a little repo
+### References
 
-Also this [video](https://www.youtube.com/watch?v=0Rb8LXftWDk)
+- My main guy [Yet another ...](https://dev.to/nimai/yet-another-guide-on-backing-up-dotfiles-3be6)
+- The [general Idea](https://www.atlassian.com/git/tutorials/dotfiles) here. A few lines of code to set up a thing locally.
+- [Somewhat useful](https://gist.github.com/mindplace/b4b094157d7a3be6afd2c96370d39fad) this walks you through the process of working with a little repo
+- Also this [video](https://www.youtube.com/watch?v=0Rb8LXftWDk)
 
