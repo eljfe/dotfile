@@ -1,0 +1,10 @@
+.config/zsh
+├── plugins
+│   └── zsh-vi-mode
+│       ├── LICENSE
+│       ├── README.md
+│       ├── zsh-vi-mode.plugin.zsh
+│       └── zsh-vi-mode.zsh
+└── zsh-tree.txt
+
+2 directories, 5 files
