@@ -14,18 +14,18 @@ Tired of screwing up config settings.  There was an incident...
 
 
 1.1 create a home/working directory  
-`git init --bare $HOME/.dotfilerepo/.git`
+`git init --bare $HOME/.config/dotfilerepo/.git`
    
 1.2 zsh alias in rc  
 
 ```.zshrc
 dotfile() { 
-	git --git-dir="${HOME}/.dotfilerepo/.git/" --work-tree="$HOME" "$@" ; 
+	git --git-dir="${HOME}/.config/dotfilerepo/.git/" --work-tree="$HOME" "$@" ; 
 }
 ```
 This function just alias all your git commands.
 
-1.3 this flags then repo (for what it does I do not know)   
+1.3 this flags the repo (for what it does I do not know)   
 `dotfile config --local status.showUntrackedFiles no`
 
 
