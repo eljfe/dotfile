@@ -26,17 +26,8 @@ dotfile() {
 This function just alias all your git commands.
 
 1.3 this flags then repo (for what it does I do not know)   
-`gmdf config --local status.showUntrackedFiles no`
+`dotfile config --local status.showUntrackedFiles no`
 
-1.4 then the copy the alias into the shell rc file so it's always there.  
-`nvim .zshrc`
-
-That's it!  Now all together:  
-
-	git init --bare $HOME/.mydotfiles  
-	alias gmdf='/usr/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'  
-	gmdf config --local status.showUntrackedFiles no
-	nvim .zshrc
 
 ### 2. set it up on git hub
 
@@ -46,24 +37,6 @@ That's it!  Now all together:
 
 ![](https://user-images.githubusercontent.com/45724186/161364445-9675e394-7c7f-477b-a50d-4d40c83eed2d.jpeg)
 
-Then generate the PAC (personal access token)... a temporary password.   
-
-Go to your 
-> picture (op right) > settings 
-
-![](https://user-images.githubusercontent.com/45724186/161364449-ba3268e3-36d5-4438-b679-a3431cb1ced4.jpeg)
-
-lower left
-
-> Developer settings
- 
-![](https://user-images.githubusercontent.com/45724186/161364451-d9427656-cd7c-4599-af50-fbb86d83e19a.jpeg)
-
-> Personal Access Key
-
-![](https://user-images.githubusercontent.com/45724186/161364452-9d559284-44bf-45af-b408-852941d6b531.jpeg)
-
-... and fill out the form.  I stale dated the PAC to last a month.
 
 ### 3. sync everything
 This was the hard part.  Ugh.
