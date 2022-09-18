@@ -1,107 +1,141 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# `za` to toggle a fold
+# `zo` to open; `zc` to close a fold
+# `zr` to open all folds, `zm` to close them
 
-export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+#{{{ GLOBALVARS
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# location settings
+export LANGUAGE=en_CA.UTF-8
+export LC_ALL=en_CA.UTF-8
+export LANG=en_CA.UTF-8
+export LC_TYPE=en_CA.UTF-8
+export CLICOLOR="Yes"
+export RPROMPT='%F{124}%*%f '
+export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sorin"
+# this PYTHONPATH setting requires `:` path seperators
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+KITTYPATH="/Applications/MacPorts/kitty.app/Contents/MacOS"
+BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
+PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
+LATEXPATH="/Library/TeX/texbin"
+LVIMPATH="$HOME/.local/bin"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+#lunarvim/npm local setup requirement
+export PATH=$PATH:$HOME/.npm-global/bin
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:\
+/Library/Apple/usr/bin:$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH:\
+$LVIMPATH"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# history setup
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
 
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# AUTOCOMPLETION
+# initialize autocompletion
+zstyle ':completion:*' completer _extensions _complete _approximate
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+#}}} 
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+#{{{ LOCALVARS
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
+INSERT_MODE_INDICATOR="%F{yellow}+%f"
 HIST_STAMPS="yyyy-mm-dd"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+#}}}
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+#{{{ ALIASES
 alias ll='ls -laFG'
-alias n=nvim
+alias v=vim
+alias vz="vim $HOME/.zshrc"
+alias sz="source $HOME/.zshrc"
+alias vv="vim $HOME/.vimrc"
 alias gmdf='/opt/local/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
+alias lsp="ls -G | less -iXRS" 
+alias pingpi="ping 192.168.2.200"
+alias sshpi="ssh eljfe@192.168.2.200"
+alias pingpi41="ping 192.168.2.45"
+alias sshpi41="ssh pi@192.168.2.45"
+alias scanlocal="nmap -sn 192.168.2.0/24"
+alias sshjs="ssh u52305743@home276229807.1and1-data.host"
+alias srcb="cd $BUDGET_PATH; source Budget-venv/bin/activate"
+alias srcp="cd $PCFIN_PATH; source PCFin-venv/bin/activate"
+
+dotfile() { 
+	git --git-dir="${HOME}/.config/dotfilerepo/.git/" --work-tree="$HOME" "$@" ; 
+}
+
+# kitty specific 
+if [[ -n $TERM && "xterm-kitty"=$TERM  ]]; then
+  alias ssh="kitty +kitten ssh"
+fi
+# }}}
+
+#{{{ BIND KEYS
+
+# NOTE: these mapping are all macOS specific
+# autocompletion using arrow keys (based on history)
+# 
+# NOTE: an easy way to test on you test on your system is to run
+#       `cat <ENTER>` 
+#       this will leave the console waiting for keyboard input.
+#       type the keys you want to know the unicode for and it will
+#       helpfully echo unicode to the console
+#       `Ctl-c` to bounce out of the `cat` command
+
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
+
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+#}}}
+
+#{{{ PLUGINS
+
+#{{{ zsh-vim-mode
+source $HOME/.config/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# Only changing the escape key to `jk` in insert mode, we still
+# keep using the default keybindings `^[` in other modes
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+#}}}
+
+#}}}
+
+#{{{ 3RD PARTY APP INTEGRATION
+
+# for use with pass the password manager
+fpath=(/opt/local/share/zsh/site-functions $fpath)
+
+#}}}
+
+#{{{ some old junk
+
+# VIM mode
+# bindkey -v
+# export KEYTIMEOUT=1
+# bindkey -M viins 'jk' vi-cmd-mode
+# In zsh-vim-mode instruction
+
+
+# Yank to the system clipboard
+# thnx [https://stackoverflow.com/questions/61466461/yank-in-visual-vim-mode-in-zsh-does-not-copy-to-clipboard-in-ordert-to-paste-w/62141665#62141665]
+# function vi-yank-xclip {
+    # zle vi-yank
+   # echo "$CUTBUFFER" | pbcopy -i
+# }  
+# 
+# zle -N vi-yank-xclip
+# bindkey -M vicmd 'y' vi-yank-xclip
+#}}}
