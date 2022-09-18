@@ -1,0 +1,9 @@
+.config/kitty
+├── kitty-themes
+│   ├── ayu_mirage.conf
+│   └── spacegray.conf
+├── kitty-tree.txt
+├── kitty.conf
+└── theme.conf -> kitty-themes/spacegray.conf
+
+1 directory, 5 files
