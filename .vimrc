@@ -39,11 +39,15 @@ inoremap jk <ESC> 				" easier INSERT mode escaping
 nnoremap Y y$
 nnoremap Q @q
 
-let mapleader="'"         " The <leader> key
+" `:echo mapleader` to verify
+let mapleader=" "         " The <leader> key
 
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
 "}}}
 
 "{{{ KEYBOARD
