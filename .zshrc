@@ -50,7 +50,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 
 #{{{ LOCALVARS
 
-INSERT_MODE_INDICATOR="%F{yellow}+%f"
+INSERT_MODE_INDICATOR="%F{yellow}+%f" # changes cursor to a yellow |
 HIST_STAMPS="yyyy-mm-dd"
 
 #}}}
@@ -72,8 +72,14 @@ alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 alias srcb="cd $BUDGET_PATH; source Budget-venv/bin/activate"
 alias srcp="cd $PCFIN_PATH; source PCFin-venv/bin/activate"
 
-dotfile() { 
-	git --git-dir="${HOME}/.config/dotfilerepo/.git/" --work-tree="$HOME" "$@" ; 
+git-dotfile() { 
+	git --git-dir="${HOME}/.config/dotfilerepo/.git/" \
+		--work-tree="$HOME" "$@" ; 
+}
+
+git-python-utils() { 
+	git --git-dir="${HOME}/.local/lib/.git/" \
+		--work-tree="$HOME/.local/lib/" "$@" ; 
 }
 
 # kitty specific 
@@ -99,6 +105,7 @@ bindkey "^[[1;3C" forward-word
 
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
 
 #}}}
 
