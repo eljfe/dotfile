@@ -1,0 +1,21 @@
+# Ignore everything
+*
+
+# But not these files...
+!.vimrc
+!.zshrc
+!.inputrc
+!kitty.conf
+!kitty-tree.txt
+!README.md
+!.gitignore_demo
+!.gitignore
+
+# ...even if they are in subdirectories
+!*/
+
+# and even if the tracked files are in subdirectories
+!*/.config/kitty/kitty.conf
+!*/.config/kitty/kitty-tree.txt
+!*/.config/dotfilerepo/README.md
+!*/.config/dotfilerepo/.gitignore_demo
