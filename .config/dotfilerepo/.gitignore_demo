@@ -4,10 +4,12 @@
 # But not these files...
 !.vimrc
 !.zshrc
+!.inputrc
 !kitty.conf
 !kitty-tree.txt
 !README.md
 !.gitignore_demo
+!.gitignore
 
 # ...even if they are in subdirectories
 !*/
