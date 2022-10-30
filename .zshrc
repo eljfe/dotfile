@@ -71,14 +71,15 @@ alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 alias srcb="cd $BUDGET_PATH; source Budget-venv/bin/activate"
 alias srcp="cd $PCFIN_PATH; source PCFin-venv/bin/activate"
+alias ggit="/usr/local/bin/git"  # homebrew git
 
 git-dotfile() { 
-	git --git-dir="${HOME}/.config/dotfilerepo/.git/" \
+	ggit --git-dir="${HOME}/.config/dotfilerepo/.git/" \
 		--work-tree="$HOME" "$@" ; 
 }
 
 git-python-utils() { 
-	git --git-dir="${HOME}/.local/lib/.git/" \
+	ggit --git-dir="${HOME}/.local/lib/.git/" \
 		--work-tree="$HOME/.local/lib/" "$@" ; 
 }
 
