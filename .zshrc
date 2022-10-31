@@ -17,7 +17,11 @@ export LANG=en_CA.UTF-8
 export LC_TYPE=en_CA.UTF-8
 export CLICOLOR="Yes"
 export RPROMPT='%F{124}%*%f '
-export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
+if [ $(hostname) = "mac-office.shevy-lan" ]; then
+	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+else
+	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
+fi
 
 # this PYTHONPATH setting requires `:` path seperators
 export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages"
