@@ -87,6 +87,11 @@ git-python-utils() {
 		--work-tree="$HOME/.local/lib/" "$@" ; 
 }
 
+git-pandoc-school() { 
+	ggit --git-dir="${HOME}/Desktop/pandoc/.git" \
+		--work-tree="$HOME/Desktop/pandoc/" "$@" ; 
+}
+
 # kitty specific 
 if [[ -n $TERM && "xterm-kitty"=$TERM  ]]; then
   alias ssh="kitty +kitten ssh"
