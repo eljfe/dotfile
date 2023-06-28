@@ -67,10 +67,13 @@ highlight ColorColumn ctermbg=234
 " Only 256 colourspace!
 " Color Picker https://www.ditig.com/256-colors-cheat-sheet
 " these set the context menus... mostly a CoC thing
-highlight Pmenu ctermfg=255 ctermbg=235 guibg=252 
-highlight PmenuSel ctermfg=0 ctermbg=187 guibg=236
+" highlight Pmenu ctermfg=255 ctermbg=235 guibg=252 
+" highlight PmenuSel ctermfg=0 ctermbg=187 guibg=236
+highlight Cursor guifg=white guibg=Grey82
+" highlight Pmenu ctermfg=255 ctermbg=235 
+" highlight PmenuSel ctermfg=0 ctermbg=187
 " the parentheses (brackets) highlighter used to hurt my eyes
-highlight MatchParen ctermbg=242 guibg=Grey40
+" highlight MatchParen ctermbg=242 guibg=Grey40
 
 syntax on
 "}}}
@@ -87,10 +90,10 @@ syntax on
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
 
 " add buffer info to tab line
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme='bubblegum'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" let g:airline_theme='ayu_dark'
 "}}}2
 
 "{{{ VimTex
