@@ -30,10 +30,15 @@ KITTYPATH="/Applications/MacPorts/kitty.app/Contents/MacOS"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
 PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
 LATEXPATH="/Library/TeX/texbin"
-LVIMPATH="$HOME/.local/bin"
+CMDSTAN_HOME="$HOME/.stan/cmdstan"
+JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
 
+export CMDSTAN_HOME
+export JULIA_CMDSTAN_HOME
+
+# LVIMPATH="$HOME/.local/bin"
 #lunarvim/npm local setup requirement
-export PATH=$PATH:$HOME/.npm-global/bin
+#export PATH=$PATH:$HOME/.npm-global/bin
 
 export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:\
 /Library/Apple/usr/bin:$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH:\
