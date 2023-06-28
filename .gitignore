@@ -7,12 +7,14 @@
 !.inputrc
 !kitty.conf
 !kitty-tree.txt
-!README.md
+# !README.md
 !.gitignore_demo
 !.gitignore
+!Library/Application\ Support/Code/User/settings.json
 
 # ...even if they are in subdirectories
 !*/
+
 
 # and even if the tracked files are in subdirectories
 !*/.config/kitty/kitty.conf
