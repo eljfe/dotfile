@@ -150,6 +150,7 @@ source $HOME/.config/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # Only changing the escape key to `jk` in insert mode, we still
 # keep using the default keybindings `^[` in other modes
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+ZVM_VI_SURROUND_BINDKEY='classic'
 #}}}
 
 #}}}
