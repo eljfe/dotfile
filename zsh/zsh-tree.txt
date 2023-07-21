@@ -1,0 +1,15 @@
+zsh
+├── manjaro-zsh-config
+├── manjaro-zsh-prompt
+├── plugins
+│   ├── UPDATING_PLUGIN_README.md
+│   └── zsh-vi-mode
+│       ├── LICENSE
+│       ├── README.md
+│       ├── zsh-vi-mode.plugin.zsh
+│       └── zsh-vi-mode.zsh
+├── themes
+├── zsh -> zsh
+└── zsh-tree.txt
+
+4 directories, 9 files

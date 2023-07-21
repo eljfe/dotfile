@@ -1,0 +1,11 @@
+kitty
+├── kitty-themes
+│   └── themes
+│       ├── ayu.conf
+│       └── ayu.conf.bak
+├── kitty-tree.txt
+├── kitty.conf
+├── kitty.confBAK
+└── theme.conf -> ./kitty-themes/themes/ayu.conf
+
+3 directories, 6 files

@@ -1,0 +1,17 @@
+vim
+├── colors
+│   ├── minimalist.vim
+│   └── rgb.txt
+├── pack
+│   └── vim-surround
+│       └── start
+│           └── surround
+│               ├── README.markdown
+│               ├── doc
+│               │   ├── surround.txt
+│               │   └── tags
+│               └── plugin
+│                   └── surround.vim
+└── vim-tree.txt
+
+8 directories, 7 files
