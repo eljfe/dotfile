@@ -58,7 +58,7 @@ git-dotfile() {
 # this PYTHONPATH setting requires `:` path seperators
 export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages"
 
-KITTYPATH="/Applications/MacPorts/kitty.app/Contents/MacOS"
+KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
 PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
 LATEXPATH="/Library/TeX/texbin"
@@ -68,14 +68,13 @@ JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
 export CMDSTAN_HOME
 export JULIA_CMDSTAN_HOME
 
-# LVIMPATH="$HOME/.local/bin"
-#lunarvim/npm local setup requirement
-#export PATH=$PATH:$HOME/.npm-global/bin
 #}}}
 
-export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:\
-/Library/Apple/usr/bin:$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH:\
-$LVIMPATH"
+
+export PATH="/usr/local/bin:\
+/usr/bin:/bin:/usr/sbin:/sbin:\
+/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:\
+$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
 
 # {{{ ZSH COMMANDLINE BEHAVIOURS
 setopt correct                                                  # Auto correct mistakes
@@ -117,11 +116,12 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # NOTE $ZDOTDIR is set in /etc/.zshenv or /etc/zsh/.zshenv
 # it is a very important setting for enabling the 
 #    git dotfile repo/ one per machine setup
+
 alias ll='ls -laFG'
 alias v=vim
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
-alias vv="vim $ZDOTDIR/.vimrc"
+alias vv="vim $DOTFILES/.config/vim/.vimrc"
 alias gmdf='/opt/local/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
 alias lsp="ls -G | less -iXRS" 
 alias pingpi="ping 192.168.2.200"
