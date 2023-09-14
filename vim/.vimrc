@@ -8,6 +8,8 @@
 "{{{ BASIC OPTIONS 
 set clipboard=unnamed 				" yanks to clipboard	
 set number                                                                              
+set relativenumber					" insert mode nav aid
+set rnu
 set wildmenu 						" command keystroke prediction	
 set wildmode=list:longest 			" bash style prediction	
 set ignorecase 						" search enhancement	
