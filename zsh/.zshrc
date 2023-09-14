@@ -121,7 +121,7 @@ alias ll='ls -laFG'
 alias v=vim
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
-alias vv="vim $DOTFILES/.config/vim/.vimrc"
+alias vv="vim $DOTFILES/vim/.vimrc"
 alias gmdf='/opt/local/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
 alias lsp="ls -G | less -iXRS" 
 alias pingpi="ping 192.168.2.200"
