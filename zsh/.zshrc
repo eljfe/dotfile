@@ -56,7 +56,8 @@ git-dotfile() {
 
 # {{{ PROGRAMMING VARIABLES
 # this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages"
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\
+	:$DOTFILES/../.local/lib/python-3x/site-packages"
 
 KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
