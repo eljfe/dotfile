@@ -146,8 +146,17 @@ git-pandoc-school() {
 }
 
 # kitty specific 
-if [[ -n $TERM && "xterm-kitty"=$TERM  ]]; then
+if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
   alias ssh="kitty +kitten ssh"
+fi
+
+# https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
+# pihole fail
+if test -n "$KITTY_INSTALLATION_DIR"; then
+	    export KITTY_SHELL_INTEGRATION="enabled"
+		    autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+			    kitty-integration
+				    unfunction kitty-integration
 fi
 # }}}
 
