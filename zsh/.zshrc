@@ -23,10 +23,13 @@ export CLICOLOR="Yes"
 
 # {{{ PROMPT
 export RPROMPT='%F{124}%*%f '
-if [ $(hostname) = "mac-office.shevy-lan" ]; then
-	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+hn=$(hostname)                                                                
+if [[ $hn == "mac-office.shevy-lan" ]]; then
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+elif [[ $hn == "asus-laptop" ]]; then
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F4A5 '
 else
-	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
 fi
 # }}}
 
