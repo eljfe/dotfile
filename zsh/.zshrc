@@ -74,11 +74,17 @@ export JULIA_CMDSTAN_HOME
 
 #}}}
 
-
-export PATH="/usr/local/bin:\
-/usr/bin:/bin:/usr/sbin:/sbin:\
-/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:\
-$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+if [[ $os == "Darwin" ]]; then
+    export PATH="/usr/local/bin:\
+    /usr/bin:/bin:/usr/sbin:/sbin:\
+    /Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:\
+    $HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+elif [[ $os == "Linux" ]]; then
+    # export PATH="${PATH}:/snap/bin"
+	export PATH="${PATH}:/usr/local/lib/python3.11"
+else
+    echo "unknown os! ... $os"
+fi
 
 # {{{ ZSH COMMANDLINE BEHAVIOURS
 setopt correct                                                  # Auto correct mistakes
