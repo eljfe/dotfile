@@ -51,6 +51,11 @@ let &t_EI = "\<Esc>[2 q"
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+":map <expr> <leader>c "<esc><c-v>" . count . "jki#<esc>"
+":map <expr> <leader>cc "<esc><c-v>" . count . "jx<esc>"
+
+":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
+
 "}}}
 
 "{{{ KEYBOARD
@@ -59,6 +64,13 @@ let &t_EI = "\<Esc>[2 q"
 "}}}
 
 "{{{ LAYOUT
+
+" resizing splits made easier
+noremap <silent> <c-left> :vertical resize -3<cr>
+noremap <silent> <c-right> :vertical resize +3<cr>
+noremap <silent> <c-up> :resize -3<cr>
+noremap <silent> <c-down> :resize +3<cr>
+
 "}}}
 
 "{{{ COLOURS
