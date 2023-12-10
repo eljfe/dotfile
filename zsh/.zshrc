@@ -127,7 +127,11 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # it is a very important setting for enabling the 
 #    git dotfile repo/ one per machine setup
 
-alias ll='ls -laFG'
+if [[ $os == "Linux" ]]; then
+	alias ll='ls -lah --color'
+else
+	alias ll='ls -laFG'
+fi
 alias v=vim
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
