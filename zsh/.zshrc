@@ -49,7 +49,7 @@ else
 fi                                                                              
 export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
 export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
-unset os                                      
+# unset os                                      
 
 git-dotfile() { 
 	/usr/local/bin/git --git-dir="${DOTFILES}/.git/" \
