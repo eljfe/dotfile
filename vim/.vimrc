@@ -68,12 +68,13 @@ let &t_EI = "\<Esc>[2 q"
 "{{{ LAYOUT
 
 " resizing splits made easier
-if system("uname") == "Linux"
+
+if has("linux")
   noremap <silent> <c-left> :vertical resize +3<cr>
   noremap <silent> <c-right> :vertical resize -3<cr>
   noremap <silent> <c-up> :resize +3<cr>
   noremap <silent> <c-down> :resize -3<cr>
-elseif system("uname") == "Darwin"
+elseif has("mac")
   noremap <silent> <leader><left> :vertical resize +3<cr>
   noremap <silent> <leader><right> :vertical resize -3<cr>
   noremap <silent> <leader><up> :resize +3<cr>
