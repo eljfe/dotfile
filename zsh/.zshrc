@@ -59,8 +59,7 @@ git-dotfile() {
 
 # {{{ PROGRAMMING VARIABLES
 # this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\
-	:$DOTFILES/../.local/lib/python-3x/site-packages"
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\:$DOTFILES/../.local/lib/python-3x/site-packages"
 
 KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
@@ -75,10 +74,7 @@ export JULIA_CMDSTAN_HOME
 #}}}
 
 if [[ $os == "Darwin" ]]; then
-    export PATH="/usr/local/bin:\
-    /usr/bin:/bin:/usr/sbin:/sbin:\
-    /Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:\
-    $HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:/$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
 elif [[ $os == "Linux" ]]; then
     # export PATH="${PATH}:/snap/bin"
 	export PATH="${PATH}:/usr/local/lib/python3.11"
