@@ -21,6 +21,8 @@ set tabstop=4
 set tabstop=4                                                                           
 set scrolloff=10 					" keeps the cursor mid-high as you scroll	
 set nowrap          	 			" forces lines all the way	
+									" :set wrap toggles and :set linebreak
+									" helps too
 set autoread           				" Reload files that have not been modified	
 set backspace=2         			" Makes backspace behave right
 set t_Co=256   						" set colourspace	
@@ -51,25 +53,33 @@ let &t_EI = "\<Esc>[2 q"
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+" Comment hack
 ":map <expr> <leader>c "<esc><c-v>" . count . "jki#<esc>"
 ":map <expr> <leader>cc "<esc><c-v>" . count . "jx<esc>"
 
+" execute python file hack
 ":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
 
 "}}}
 
 "{{{ KEYBOARD
-
-
 "}}}
 
 "{{{ LAYOUT
 
 " resizing splits made easier
-noremap <silent> <c-left> :vertical resize -3<cr>
-noremap <silent> <c-right> :vertical resize +3<cr>
-noremap <silent> <c-up> :resize -3<cr>
-noremap <silent> <c-down> :resize +3<cr>
+if system("uname") == "Linux"
+  noremap <silent> <c-left> :vertical resize +3<cr>
+  noremap <silent> <c-right> :vertical resize -3<cr>
+  noremap <silent> <c-up> :resize +3<cr>
+  noremap <silent> <c-down> :resize -3<cr>
+elseif system("uname") == "Darwin"
+  noremap <silent> <leader><left> :vertical resize +3<cr>
+  noremap <silent> <leader><right> :vertical resize -3<cr>
+  noremap <silent> <leader><up> :resize +3<cr>
+  noremap <silent> <leader><down> :resize -3<cr>
+endif
+
 
 "}}}
 
