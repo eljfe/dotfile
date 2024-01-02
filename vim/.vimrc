@@ -18,7 +18,6 @@ set showcmd 						" command completion
                                                                                         
 set shiftwidth=4                                                                        
 set tabstop=4                                                                           
-set tabstop=4                                                                           
 set scrolloff=10 					" keeps the cursor mid-high as you scroll	
 set nowrap          	 			" forces lines all the way	
 									" :set wrap toggles and :set linebreak
@@ -29,8 +28,10 @@ set t_Co=256   						" set colourspace
 set splitbelow splitright 			" new splits appear as expected	
 
 set foldmethod=marker
-set timeoutlen=2500					" slows down chording of key mappings so 	
+set timeoutlen=2900					" slows down chording of key mappings so 	
                                     " `jk` doesn't drop down a line each time
+
+
 " 2023.07                                                                       
 " this is a big deal... in cordination with .zshrc                              
 " and the env variables there in                                                
@@ -40,7 +41,7 @@ set packpath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 "}}}
 
 "{{{ KEY MAPPING
-inoremap jk <ESC> 				" easier INSERT mode escaping
+inoremap jk <Esc>
 nnoremap Y y$
 nnoremap Q @q
 
@@ -54,8 +55,8 @@ let &t_EI = "\<Esc>[2 q"
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Comment hack
-":map <expr> <leader>c "<esc><c-v>" . count . "jki#<esc>"
-":map <expr> <leader>cc "<esc><c-v>" . count . "jx<esc>"
+":map <expr> <leader>c "m90<esc><c-v>" . count . "jki#<esc>`9<esc>"
+":map <expr> <leader>cc "m90<esc><c-v>" . count . "jklx<esc>`9<esc>"
 
 " execute python file hack
 ":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
