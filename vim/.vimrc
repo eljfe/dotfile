@@ -55,8 +55,8 @@ let &t_EI = "\<Esc>[2 q"
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Comment hack
-":map <expr> <leader>c "m90<esc><c-v>" . count . "jki#<esc>`9<esc>"
-":map <expr> <leader>cc "m90<esc><c-v>" . count . "jklx<esc>`9<esc>"
+":map <expr> <leader>c "m90<esc><c-v>" . count . "jkiI# <esc>`9<esc>"
+":map <expr> <leader>C "m90<esc><c-v>" . count . "jkl2x<esc>`9<esc>"
 
 " execute python file hack
 ":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
