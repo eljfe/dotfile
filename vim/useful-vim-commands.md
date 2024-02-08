@@ -7,11 +7,15 @@
 ## latex
 
 ### align 
+
 `iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI`
 
 ### brackets and braces
+
 `iab lrp \left( \right) <ESC>8<LEFT>i`
+
 `iab lra \left| \right| <ESC>8<LEFT>i`
+
 `iab lrb \left[ \right] <ESC>8<LEFT>i`
 
 ### fractions
