@@ -13,9 +13,7 @@
 ### brackets and braces
 
 `iab lrp \left( \right) <ESC>8<LEFT>i`
-
-`iab lra \left| \right| <ESC>8<LEFT>i`
-
+`iab lra \left\| \right\| <ESC>8<LEFT>i`
 `iab lrb \left[ \right] <ESC>8<LEFT>i`
 
 ### fractions
@@ -31,7 +29,7 @@
 `iab tan \tan{} <ESC>1<LEFT>i`
 
 ### limits
-`iab lim \lim_{} <ESC>1<LEFT>i`
+`iab lim \lim_{}{} <ESC>3<LEFT>i`
 
 # commandline
 
