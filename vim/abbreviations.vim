@@ -2,8 +2,18 @@
 " 
 " ## helpers
 " 
-" una ps will erase the abbreviation ps
+" `una ps` will erase the abbreviation ps
+" `q:` (...yes in that order) shows ex cmd history & u can copy from it:)
+" don't forget in ex-cmd mode <C-r>"<register here> pastes into the commandline...
 " 
+" ### Notability hacks
+"
+" These tidy the math convertion output, which is annoying,
+" 
+" '<,'>s/dfrac/frac/g
+" '<,'>s/\\left)/)/g
+" '<,'>s/\\right)/)/g
+"
 " ## latex
 " 
 " ### align 
@@ -18,12 +28,14 @@ iab lrb \left[ \right] <ESC>8<LEFT>i
 
 " ### fractions
 
-iab tf \tfrac{}{} <ESC>3<LEFT>i
+iab tfrac \tfrac{}{} <ESC>3<LEFT>i
+iab frac \ftrac{}{} <ESC>3<LEFT>i
+iab dfrac \dtrac{}{} <ESC>3<LEFT>i
 
 " ### operations
 
 iab sqrt \sqrt{}<ESC>i
-iab cd \cdot
+iab cdot \cdot
 
 " ### trig
 
