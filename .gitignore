@@ -15,6 +15,9 @@ zsh/plugins/*
 
 vim/*
 !.vimrc
+# 2024.03
+!vim/sources
+!vim/sources/*
 # all the packages and their git repos are ignored
 
 
