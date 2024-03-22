@@ -1,3 +1,4 @@
+" zM fold all 
 " <zo> to open folds, <zc> to close
 " <za> to toggle folds
 
@@ -18,17 +19,22 @@ set showcmd 						" command completion
                                                                                         
 set shiftwidth=4                                                                        
 set tabstop=4                                                                           
-set tabstop=4                                                                           
 set scrolloff=10 					" keeps the cursor mid-high as you scroll	
 set nowrap          	 			" forces lines all the way	
+									" :set wrap toggles and :set linebreak
+									" helps too
 set autoread           				" Reload files that have not been modified	
 set backspace=2         			" Makes backspace behave right
 set t_Co=256   						" set colourspace	
 set splitbelow splitright 			" new splits appear as expected	
 
 set foldmethod=marker
-set timeoutlen=2500					" slows down chording of key mappings so 	
+"set foldmethod=manual
+set foldlevel=99
+set timeoutlen=2900					" slows down chording of key mappings so 	
                                     " `jk` doesn't drop down a line each time
+
+
 " 2023.07                                                                       
 " this is a big deal... in cordination with .zshrc                              
 " and the env variables there in                                                
@@ -38,7 +44,7 @@ set packpath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 "}}}
 
 "{{{ KEY MAPPING
-inoremap jk <ESC> 				" easier INSERT mode escaping
+inoremap jk <Esc>
 nnoremap Y y$
 nnoremap Q @q
 
@@ -51,14 +57,35 @@ let &t_EI = "\<Esc>[2 q"
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+" Comment hack
+":map <expr> <leader>c "m90<esc><c-v>" . count . "jkiI# <esc>`9<esc>"
+":map <expr> <leader>C "m90<esc><c-v>" . count . "jkl2x<esc>`9<esc>"
+
+" execute python file hack
+":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
+
 "}}}
 
 "{{{ KEYBOARD
-
-
 "}}}
 
 "{{{ LAYOUT
+
+" resizing splits made easier
+
+if has("linux")
+  noremap <silent> <c-left> :vertical resize +3<cr>
+  noremap <silent> <c-right> :vertical resize -3<cr>
+  noremap <silent> <c-up> :resize +3<cr>
+  noremap <silent> <c-down> :resize -3<cr>
+elseif has("mac")
+  noremap <silent> <leader><left> :vertical resize +3<cr>
+  noremap <silent> <leader><right> :vertical resize -3<cr>
+  noremap <silent> <leader><up> :resize +3<cr>
+  noremap <silent> <leader><down> :resize -3<cr>
+endif
+
+
 "}}}
 
 "{{{ COLOURS
@@ -87,6 +114,10 @@ syntax on
 "   `:helptags ~/.vim/pack/plugins/start/foo`
 " Or to generate the helptags for everything in Vim's 
 " runtimepath, run     `:helptags ALL`
+
+"{{{ Supertab
+
+"}}}
 
 "{{{2 Airline
 " view airline-themes

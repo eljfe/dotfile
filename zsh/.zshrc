@@ -23,10 +23,13 @@ export CLICOLOR="Yes"
 
 # {{{ PROMPT
 export RPROMPT='%F{124}%*%f '
-if [ $(hostname) = "mac-office.shevy-lan" ]; then
-	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+hn=$(hostname)                                                                
+if [[ $hn == "mac-office.shevy-lan" ]]; then
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+elif [[ $hn == "asus-laptop" ]]; then
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F4A5 '
 else
-	export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
 fi
 # }}}
 
@@ -46,7 +49,7 @@ else
 fi                                                                              
 export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
 export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
-unset os                                      
+# unset os                                      
 
 git-dotfile() { 
 	/usr/local/bin/git --git-dir="${DOTFILES}/.git/" \
@@ -56,8 +59,7 @@ git-dotfile() {
 
 # {{{ PROGRAMMING VARIABLES
 # this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\
-	:$DOTFILES/../.local/lib/python-3x/site-packages"
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\:$DOTFILES/../.local/lib/python-3x/site-packages"
 
 KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
@@ -71,11 +73,14 @@ export JULIA_CMDSTAN_HOME
 
 #}}}
 
-
-export PATH="/usr/local/bin:\
-/usr/bin:/bin:/usr/sbin:/sbin:\
-/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:\
-$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+if [[ $os == "Darwin" ]]; then
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:/$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+elif [[ $os == "Linux" ]]; then
+    # export PATH="${PATH}:/snap/bin"
+	export PATH="${PATH}:/usr/local/lib/python3.11"
+else
+    echo "unknown os! ... $os"
+fi
 
 # {{{ ZSH COMMANDLINE BEHAVIOURS
 setopt correct                                                  # Auto correct mistakes
@@ -118,7 +123,11 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # it is a very important setting for enabling the 
 #    git dotfile repo/ one per machine setup
 
-alias ll='ls -laFG'
+if [[ $os == "Linux" ]]; then
+	alias ll='ls -lah --color'
+else
+	alias ll='ls -laFG'
+fi
 alias v=vim
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
