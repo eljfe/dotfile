@@ -1,3 +1,4 @@
+" zM fold all 
 " <zo> to open folds, <zc> to close
 " <za> to toggle folds
 
@@ -28,6 +29,8 @@ set t_Co=256   						" set colourspace
 set splitbelow splitright 			" new splits appear as expected	
 
 set foldmethod=marker
+"set foldmethod=manual
+set foldlevel=99
 set timeoutlen=2900					" slows down chording of key mappings so 	
                                     " `jk` doesn't drop down a line each time
 
@@ -111,6 +114,10 @@ syntax on
 "   `:helptags ~/.vim/pack/plugins/start/foo`
 " Or to generate the helptags for everything in Vim's 
 " runtimepath, run     `:helptags ALL`
+
+"{{{ Supertab
+
+"}}}
 
 "{{{2 Airline
 " view airline-themes
