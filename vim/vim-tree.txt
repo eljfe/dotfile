@@ -1,14 +1,20 @@
 .
 ├── README.md
+├── colors
+│   ├── minimalist.vim
+│   ├── railscasts.vim
+│   ├── rgb.txt
+│   └── sitruuna.vim
 ├── pack
 │   └── plugins
 │       └── start
-│           ├── jedi-vim
-│           ├── supertab
-│           └── vim-surround
+│           ├── ale
+│           ├── lightline.vim
+│           ├── surround
+│           └── vim-flake8
 ├── sources
 │   ├── latex.abv
 │   └── python.src
 └── vim-tree.txt
 
-8 directories, 4 files
+10 directories, 8 files

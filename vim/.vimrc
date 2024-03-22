@@ -90,7 +90,9 @@ endif
 
 "{{{ COLOURS
 set colorcolumn=80        " Highlight 80 character limit
-highlight ColorColumn ctermbg=234
+
+" 2024.03 commented Cursor out
+" highlight ColorColumn ctermbg=234
 " thx https://www.ditig.com/256-colors-cheat-sheet
 
 
@@ -99,11 +101,15 @@ highlight ColorColumn ctermbg=234
 " these set the context menus... mostly a CoC thing
 " highlight Pmenu ctermfg=255 ctermbg=235 guibg=252 
 " highlight PmenuSel ctermfg=0 ctermbg=187 guibg=236
-highlight Cursor guifg=white guibg=Grey82
+
+" 2024.03 commented Cursor out
+" highlight Cursor guifg=white guibg=Grey82
 " highlight Pmenu ctermfg=255 ctermbg=235 
 " highlight PmenuSel ctermfg=0 ctermbg=187
 " the parentheses (brackets) highlighter used to hurt my eyes
 " highlight MatchParen ctermbg=242 guibg=Grey40
+
+colorscheme sitruuna
 
 syntax on
 "}}}
@@ -115,20 +121,20 @@ syntax on
 " Or to generate the helptags for everything in Vim's 
 " runtimepath, run     `:helptags ALL`
 
+"{{{ Lightline Theme
+set laststatus=2
+"}}}
+
+"{{{ Ale
+
+let g:ale_linters = { 'python': [ 'flake8' ]}
+
+"}}}
+
 "{{{ Supertab
 
 "}}}
 
-"{{{2 Airline
-" view airline-themes
-" https://github.com/vim-airline/vim-airline/wiki/Screenshots
-
-" add buffer info to tab line
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-" let g:airline_theme='ayu_dark'
-"}}}2
 
 "{{{ VimTex
 " vimtex 
