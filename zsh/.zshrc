@@ -59,15 +59,18 @@ git-dotfile() {
 
 # {{{ PROGRAMMING VARIABLES
 # this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages\:$DOTFILES/../.local/lib/python-3x/site-packages"
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages:$DOTFILES/../.local/lib/python-3x/site-packages"
+
 
 KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
 PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
+FINDATA_PATH="/Users/Shared/Financials"
 LATEXPATH="/Library/TeX/texbin"
 CMDSTAN_HOME="$HOME/.stan/cmdstan"
 JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
 
+export FINDATA_PATH
 export CMDSTAN_HOME
 export JULIA_CMDSTAN_HOME
 
