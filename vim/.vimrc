@@ -8,7 +8,8 @@
 
 "{{{ BASIC OPTIONS 
 set clipboard=unnamed 				" yanks to clipboard	
-set number                                                                              
+set number 
+
 set relativenumber					" insert mode nav aid
 set rnu
 set wildmenu 						" command keystroke prediction	
@@ -17,8 +18,8 @@ set ignorecase 						" search enhancement
 set smartcase 						" ... but allow you to use CAPS if needed
 set showcmd 						" command completion	
                                                                                         
-set shiftwidth=4                                                                        
-set tabstop=4                                                                           
+set shiftwidth=4
+set tabstop=4
 set scrolloff=10 					" keeps the cursor mid-high as you scroll	
 set nowrap          	 			" forces lines all the way	
 									" :set wrap toggles and :set linebreak
@@ -57,12 +58,8 @@ let &t_EI = "\<Esc>[2 q"
 
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-" Comment hack
-":map <expr> <leader>c "m90<esc><c-v>" . count . "jkiI# <esc>`9<esc>"
-":map <expr> <leader>C "m90<esc><c-v>" . count . "jkl2x<esc>`9<esc>"
-
-" execute python file hack
-":map <leader>p :w<cr> :!clear && python3 % \|less<cr>
+" see the $DOTFILE/vim/source directory for language specific mappings and 
+" abbreviations
 
 "}}}
 
@@ -123,6 +120,12 @@ syntax on
 
 "{{{ Lightline Theme
 set laststatus=2
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      "\ 'colorscheme': 'wombat',
+      \ }
+
 "}}}
 
 "{{{ Ale
@@ -135,6 +138,11 @@ let g:ale_linters = { 'python': [ 'flake8' ]}
 
 "}}}
 
+" {{{ Vimspector
+
+" :source $DOTFILES/vim/souces/vimspector.vim
+
+" }}}
 
 "{{{ VimTex
 " vimtex 
