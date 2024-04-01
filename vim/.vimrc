@@ -131,8 +131,16 @@ let g:lightline = {
 "{{{ Ale
 
 let g:ale_linters = { 'python': [ 'flake8' ]}
+let g:ale_virtualtext_cursor = 'disabled'
 
 "}}}
+
+" {{{
+" jedi-vim
+
+let g:jedi#auto_initialization = 0
+
+" }}}
 
 "{{{ Supertab
 
