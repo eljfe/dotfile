@@ -9,6 +9,10 @@
 " abbreviations
 
 iab pf print(f"{}") <esc>4hi
+iab pr print("") <esc>2hi
+iab dfun def() ->:<cr>pass <esc>khi
+
+
 
 
 " Plugins
