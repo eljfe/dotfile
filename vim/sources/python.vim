@@ -9,9 +9,8 @@
 " abbreviations
 
 iab pf print(f"{}") <esc>4hi
-iab pr print("") <esc>2hi
-iab dfun def() ->:<cr>pass <esc>khi
-
+iab pr print() <esc>hi
+iab dfun <esc>Idef() ->:<cr>pass<esc>k0ea
 
 
 
