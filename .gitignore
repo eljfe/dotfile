@@ -1,5 +1,9 @@
+# vim swap
+*.swp
+
 zsh/*
-!.zshrc
+# 2024.06
+!.*rc
 !manjaro*
 # all the plugins and their git repos are ignored
 # except the _READMD.md
@@ -22,9 +26,11 @@ vim/*
 
 
 kitty/*
-!kitty.conf
-!kitty-themes
-!theme.conf
+# 2024.06
+kitty/kitty-themes/*
+!kitty/kitty.conf
+!kitty/theme.conf
+!kitty/kitty-tree.txt
 
 !*.txt
 # !*.md
