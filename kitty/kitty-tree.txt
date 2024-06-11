@@ -1,11 +1,14 @@
 kitty
+├── current-theme.conf
+├── kitty.conf
+├── kitty.conf.bak
 ├── kitty-themes
 │   └── themes
 │       ├── ayu.conf
-│       └── ayu.conf.bak
+│       ├── ayu.conf.bak
+│       ├── Thayer_Bright.conf
+│       └── theme.conf -> theme.conf
 ├── kitty-tree.txt
-├── kitty.conf
-├── kitty.confBAK
-└── theme.conf -> ./kitty-themes/themes/ayu.conf
+└── theme.conf -> kitty-themes/themes/Thayer_Bright.conf
 
-3 directories, 6 files
+3 directories, 9 files
