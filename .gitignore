@@ -2,11 +2,9 @@
 *.swp
 
 zsh/*
-# 2024.06
 !.*rc
 !manjaro*
-# all the plugins and their git repos are ignored
-# except the _READMD.md
+# all the plugins and their git repos are ignored except the _README.md
 # 1 except the plugins folder
 !zsh/plugins
 # now ignore plugins folder contents
@@ -19,15 +17,13 @@ zsh/plugins/*
 
 vim/*
 !.vimrc
-# 2024.03
 !vim/sources
 !vim/sources/*
 # all the packages and their git repos are ignored
 
 
-kitty/*
+kitty/**
 # 2024.06
-kitty/kitty-themes/*
 !kitty/kitty.conf
 !kitty/theme.conf
 !kitty/kitty-tree.txt
