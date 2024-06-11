@@ -1,0 +1,34 @@
+# this is a child of `/.zshrc`
+# macOS specific settings only
+
+gitbin="/usr/local/bin/git" 
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:/$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
+
+# {{{ PROGRAMMING VARIABLES
+
+# this PYTHONPATH setting requires `:` path seperators
+export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages:$DOTFILES/../.local/lib/python-3x/site-packages"
+
+# KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
+BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
+PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
+FINDATA_PATH="/Users/Shared/Financials"
+LATEXPATH="/Library/TeX/texbin"
+CMDSTAN_HOME="$HOME/.stan/cmdstan"
+JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
+
+export FINDATA_PATH
+export CMDSTAN_HOME
+export JULIA_CMDSTAN_HOME
+
+#}}}
+
+alias ll='ls -laFG'
+alias ggit="/usr/local/bin/git"  # homebrew git
+
+git-python-utils() { 
+	ggit --git-dir="${HOME}/.local/lib/.git/" \
+		--work-tree="$HOME/.local/lib/" "$@" ; 
+}
+

@@ -28,6 +28,8 @@ if [[ $hn == "mac-office.shevy-lan" ]]; then
     export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
 elif [[ $hn == "asus-laptop" ]]; then
     export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F4A5 '
+elif [[ $hn == "sherrysmbp" ]]; then
+    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f ∅ '
 else
     export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
 fi
@@ -41,49 +43,33 @@ fi
 # Too many machines, too many users (14 at the time of this writing - 2023.07)  
 os=$(uname)                                                                     
 if [[ $os == "Darwin" ]]; then                                                  
-    export DOTFILES='/Users/Shared/.config'                                     
+	osrc=".macrc" 
+	export DOTFILES='/Users/Shared/.config'                                     
+	source "$DOTFILES/zsh/$osrc"
 elif [[ $os == "Linux" ]]; then                                                 
-    export DOTFILES='/srv/dotfile/.config'                                      
+	osrc=".linuxrc" 
+	export DOTFILES='/srv/dotfile/.config'                                      
+	source "$DOTFILES/zsh/$osrc"
 else                                                                            
     echo "unknown os! ... $os"                                                  
 fi                                                                              
-export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
-export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
 # unset os                                      
 
+export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
+export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
+
+# $gitbin set in $osrc
 git-dotfile() { 
-	/usr/local/bin/git --git-dir="${DOTFILES}/.git/" \
+	$gitbin --git-dir="${DOTFILES}/.git/" \
 		--work-tree="$DOTFILES" "$@" ; 
 }
 # }}}
 
+# PATH variables in $osrc
+
 # {{{ PROGRAMMING VARIABLES
-# this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages:$DOTFILES/../.local/lib/python-3x/site-packages"
-
-
-KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
-BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
-PCFIN_PATH="$HOME/Documents/Business/Financials/PCFin"
-FINDATA_PATH="/Users/Shared/Financials"
-LATEXPATH="/Library/TeX/texbin"
-CMDSTAN_HOME="$HOME/.stan/cmdstan"
-JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
-
-export FINDATA_PATH
-export CMDSTAN_HOME
-export JULIA_CMDSTAN_HOME
-
+# see $osrc
 #}}}
-
-if [[ $os == "Darwin" ]]; then
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:/$HOME/Library/Python/3.10/bin:$KITTYPATH:$LATEXPATH"
-elif [[ $os == "Linux" ]]; then
-    # export PATH="${PATH}:/snap/bin"
-	export PATH="${PATH}:/usr/local/lib/python3.11"
-else
-    echo "unknown os! ... $os"
-fi
 
 # {{{ ZSH COMMANDLINE BEHAVIOURS
 setopt correct                                                  # Auto correct mistakes
@@ -126,17 +112,10 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # it is a very important setting for enabling the 
 #    git dotfile repo/ one per machine setup
 
-if [[ $os == "Linux" ]]; then
-	alias ll='ls -lah --color'
-else
-	alias ll='ls -laFG'
-fi
 alias v=vim
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
 alias vv="vim $DOTFILES/vim/.vimrc"
-alias gmdf='/opt/local/bin/git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
-alias lsp="ls -G | less -iXRS" 
 alias pingpi="ping 192.168.2.200"
 alias sshpi="ssh eljfe@192.168.2.200"
 alias pingpi45="ping 192.168.2.45"
@@ -145,17 +124,6 @@ alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 alias srcb="cd $BUDGET_PATH; source Budget-venv/bin/activate"
 alias srcp="cd $PCFIN_PATH; source PCFin-venv/bin/activate"
-alias ggit="/usr/local/bin/git"  # homebrew git
-
-git-python-utils() { 
-	ggit --git-dir="${HOME}/.local/lib/.git/" \
-		--work-tree="$HOME/.local/lib/" "$@" ; 
-}
-
-git-pandoc-school() { 
-	ggit --git-dir="${HOME}/Desktop/pandoc/.git" \
-		--work-tree="$HOME/Desktop/pandoc/" "$@" ; 
-}
 
 # kitty specific 
 if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
@@ -184,11 +152,12 @@ fi
 #       helpfully echo unicode to the console
 #       `Ctl-c` to bounce out of the `cat` command
 
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;3C" forward-word
-
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+# 2024-06 bit sure these are relevant
+# bindkey "^[[1;3D" backward-word
+# bindkey "^[[1;3C" forward-word
+# 
+# bindkey '^[[A' history-search-backward
+# bindkey '^[[B' history-search-forward
 
 
 #}}}
@@ -208,26 +177,10 @@ ZVM_VI_SURROUND_BINDKEY='classic'
 #{{{ 3RD PARTY APP INTEGRATION
 
 # for use with pass the password manager
-fpath=(/opt/local/share/zsh/site-functions $fpath)
+# fpath=(/opt/local/share/zsh/site-functions $fpath)
 
 #}}}
 
 #{{{ some old junk
 
-# VIM mode
-# bindkey -v
-# export KEYTIMEOUT=1
-# bindkey -M viins 'jk' vi-cmd-mode
-# In zsh-vim-mode instruction
-
-
-# Yank to the system clipboard
-# thnx [https://stackoverflow.com/questions/61466461/yank-in-visual-vim-mode-in-zsh-does-not-copy-to-clipboard-in-ordert-to-paste-w/62141665#62141665]
-# function vi-yank-xclip {
-    # zle vi-yank
-   # echo "$CUTBUFFER" | pbcopy -i
-# }  
-# 
-# zle -N vi-yank-xclip
-# bindkey -M vicmd 'y' vi-yank-xclip
 #}}}
