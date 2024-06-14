@@ -6,3 +6,6 @@ export PATH="${PATH}:/usr/local/lib/python3.11:${HOME}/.config/emacs/bin"
 alias ll='ls -lAFh --color'
 alias emacs='emacsclient -c -a "emacs"'
 
+# battery percent
+bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)%
+export RPROMPT="%F{124}%*/${bat}%"
