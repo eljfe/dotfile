@@ -32,3 +32,7 @@ git-python-utils() {
 		--work-tree="$HOME/.local/lib/" "$@" ; 
 }
 
+# Emacs as a service
+# maybe we run this ... later
+# /usr/local/opt/emacs/bin/emacs --fg-daemon
+
