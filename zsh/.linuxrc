@@ -7,5 +7,12 @@ alias ll='ls -lAFh --color'
 alias emacs='emacsclient -c -a "emacs"'
 
 # battery percent
-bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)%
-export RPROMPT="%F{124}%*/${bat}%"
+set -o PROMPT_SUBST
+bat () {
+       echo $(cat /sys/class/power_supply/BAT0/capacity)%
+}
+# bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)
+# acpi | awk -F, '{print $2}' | sed 's/^ //'
+# export RPROMPT="%F{124}%*/$(bat)%%"
+
+alias killemacsd='emacsclient -e "(kill-emacs)"'
