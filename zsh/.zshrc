@@ -124,9 +124,9 @@ alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 
 # kitty specific 
-if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
-  alias ssh="kitty +kitten ssh"
-fi
+# if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
+#   alias ssh="kitty +kitten ssh"
+# fi
 
 # https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 # pihole fail
