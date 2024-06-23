@@ -32,6 +32,11 @@ git-python-utils() {
 		--work-tree="$HOME/.local/lib/" "$@" ; 
 }
 
+# kitty specific 
+if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
+  alias ssh="kitty +kitten ssh"
+fi
+
 # Emacs as a service
 # maybe we run this ... later
 # /usr/local/opt/emacs/bin/emacs --fg-daemon
