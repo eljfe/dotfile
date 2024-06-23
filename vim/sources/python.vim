@@ -11,10 +11,8 @@
 iab pf print(f"{}") <esc>4hi
 iab pr print() <esc>hi
 iab dfun <esc>Idef() ->:<cr>pass<esc>k0ea
+iab dmain <ESC>Idef main():<CR><ESC>04i<SPACE><ESC>apass<CR><CR><CR><ESC>Iif __name__ == "__main__":<CR><ESC>0<ESC>4i<SPACE><ESC>amain()
 
-
-
-" Plugins
 
 " Ale
 nnoremap <silent> <leader>aj :ALENext<cr>
