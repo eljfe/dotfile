@@ -122,8 +122,6 @@ alias pingpi45="ping 192.168.2.45"
 alias sshpi45="ssh eljfe@192.168.2.45"
 alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
-alias srcb="cd $BUDGET_PATH; source Budget-venv/bin/activate"
-alias srcp="cd $PCFIN_PATH; source PCFin-venv/bin/activate"
 
 # kitty specific 
 if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
