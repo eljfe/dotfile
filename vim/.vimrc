@@ -135,10 +135,15 @@ let g:ale_virtualtext_cursor = 'disabled'
 
 "}}}
 
-" {{{
-" jedi-vim
+" {{{ jedi-vim
+"
+" filetype plugin on
+" set omnifunc=jedi#completions
 
-let g:jedi#auto_initialization = 0
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#show_call_signatures = "2"
+
+" let g:jedi#auto_initialization = 0
 
 " }}}
 
