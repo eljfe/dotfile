@@ -22,16 +22,22 @@ HIST_STAMPS="yyyy-mm-dd"
 export CLICOLOR="Yes"
 
 # {{{ PROMPT
-export RPROMPT='%F{124}%*%f '
-hn=$(hostname)                                                                
+export RPROMPT='%F{124}%*%f'
+hn=$(hostname)
+# this line creates a 6 line bottom gutter so you aren't always typing 
+# ... in the bottom cm of the screen.  6 newlines, and `/e[6A` apparently
+# ... bumps the prompt back up by 6.
+PS1=$'\n\n\n\n\n\e[6A'
+# basic shared prompt
+PS1="$PS1%F{243}%n@%m%f %F{192}%1~%f "
 if [[ $hn == "mac-office.shevy-lan" ]]; then
-    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F332 '
+    export PS1="$PS1\U1F332 "
 elif [[ $hn == "asus-laptop" ]]; then
-    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F4A5 '
+    export PS1="$PS1\U1F4A5 "
 elif [[ $hn == "sherrysmbp" ]]; then
-    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f ∅ '
+    export PS1="$PS1∅ "
 else
-    export PS1=$'%F{243}%n@%m%f %F{192}%1~%f \U1F344 '
+    export PS1="$PS1\U1F344 "
 fi
 # }}}
 
