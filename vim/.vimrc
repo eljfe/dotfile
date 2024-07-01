@@ -106,9 +106,14 @@ set colorcolumn=80        " Highlight 80 character limit
 " the parentheses (brackets) highlighter used to hurt my eyes
 " highlight MatchParen ctermbg=242 guibg=Grey40
 
-colorscheme sitruuna
-
 syntax on
+
+" vimdiff colouring
+if &diff
+	colorscheme desert
+else
+	colorscheme sitruuna
+endif
 "}}}
 
 "{{{ PLUGINS
