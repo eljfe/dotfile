@@ -17,6 +17,7 @@ set wildmode=list:longest 			" bash style prediction
 set ignorecase 						" search enhancement	
 set smartcase 						" ... but allow you to use CAPS if needed
 set showcmd 						" command completion	
+set shortmess-=S					" displays number of search 'hits'
                                                                                         
 set shiftwidth=4
 set tabstop=4
