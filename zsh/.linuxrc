@@ -16,3 +16,4 @@ bat () {
 # export RPROMPT="%F{124}%*/$(bat)%%"
 
 alias killemacsd='emacsclient -e "(kill-emacs)"'
+alias ttc='xclip -selection clipboard'
