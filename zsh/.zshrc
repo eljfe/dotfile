@@ -125,6 +125,7 @@ alias sz="source $ZDOTDIR/.zshrc"
 alias vv="vim $DOTFILES/vim/.vimrc"
 alias pingpi="ping 192.168.2.200"
 alias sshpi="ssh eljfe@192.168.2.200"
+alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
 alias pingpi45="ping 192.168.2.45"
 alias sshpi45="ssh eljfe@192.168.2.45"
 alias scanlocal="nmap -sn 192.168.2.0/24"
