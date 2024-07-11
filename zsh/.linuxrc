@@ -17,3 +17,7 @@ bat () {
 
 alias killemacsd='emacsclient -e "(kill-emacs)"'
 alias ttc='xclip -selection clipboard'
+
+if [ $(hostname) = obsequious ]; then
+	source .obsequious
+fi
