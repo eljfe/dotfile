@@ -19,5 +19,5 @@ alias killemacsd='emacsclient -e "(kill-emacs)"'
 alias ttc='xclip -selection clipboard'
 
 if [ $(hostname) = obsequious ]; then
-	source .obsequious
+	source $DOTFILES/zsh/.obsequious
 fi
