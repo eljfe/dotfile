@@ -36,9 +36,9 @@ if [[ $hn == "mac-office.shevy-lan" ]]; then
 elif [[ $hn == "asus-laptop" ]]; then
     export PS1="$PS1\U1F4A5 "
 elif [[ $hn == "sherrysmbp" ]]; then
-    export PS1=$PS1"∅ "
+    export PS1=$PS1"🐌 "
 elif [[ $hn == "obsequious" ]]; then
-    export PS1=$PS1"∀ "
+    export PS1=$PS1"🧅 "
 else
     export PS1="$PS1\U1F344 "
 fi
