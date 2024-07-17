@@ -40,7 +40,7 @@ elif [[ $hn == "sherrysmbp" ]]; then
 elif [[ $hn == "obsequious" ]]; then
     export PS1=$PS1"🧅 "
 else
-    export PS1="$PS1\U1F344 "
+    export PS1="$PS1🌭 "
 fi
 # }}}
 
