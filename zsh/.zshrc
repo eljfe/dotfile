@@ -39,6 +39,8 @@ elif [[ $hn == "sherrysmbp" ]]; then
     export PS1=$PS1"🐌 "
 elif [[ $hn =~ "homeoffthership.*" ]]; then
 	export PS1=$PS1"🌲 "
+elif [[ $hn == "pihole" ]]; then
+    export PS1=$PS1"🥧 "
 elif [[ $hn == "obsequious" ]]; then
     export PS1=$PS1"🧅 "
 else
