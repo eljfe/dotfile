@@ -9,9 +9,20 @@ alias emacs='emacsclient -c -a "emacs"'
 # battery percent
 set -o PROMPT_SUBST
 bat () {
-       echo $(cat /sys/class/power_supply/BAT0/capacity)%
+    echo $(cat /sys/class/power_supply/BAT0/capacity)%
 }
 # bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)
+
+round () { echo $(( ($1 + $2/2) / $2 )) }
+roundf () { printf "%.${2:-0}f" "$1" }
+
+# core temp on systems that don't ship with lm_sensor
+ctemp () {
+	systemp=$(cat /sys/class/thermal/thermal_zone0/temp)
+	t=$(( $systemp/1000.0 ))
+    echo "$(roundf $t 2)"
+}
+
 # acpi | awk -F, '{print $2}' | sed 's/^ //'
 # export RPROMPT="%F{124}%*/$(bat)%%"
 
