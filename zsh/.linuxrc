@@ -31,4 +31,6 @@ alias ttc='xclip -selection clipboard'
 
 if [ $(hostname) = obsequious ]; then
 	source $DOTFILES/zsh/.obsequious
+elif [ $(hostname) = loiridium ]; then
+	source $DOTFILES/zsh/.loiridium
 fi
