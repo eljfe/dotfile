@@ -43,6 +43,8 @@ elif [[ $hn == "pihole" ]]; then
     export PS1=$PS1"🥧 "
 elif [[ $hn == "obsequious" ]]; then
     export PS1=$PS1"🧅 "
+elif [[ $hn == "loiridium" ]]; then
+    export PS1=$PS1"🧨 "
 else
     export PS1="$PS1🌭 "
 fi
@@ -130,13 +132,12 @@ alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
 alias vv="vim $DOTFILES/vim/.vimrc"
 alias pingpi="ping 192.168.2.200"
-alias sshpi="ssh eljfe@192.168.2.200"
+alias sshpi="ssh pi@pihole.shevylan"
 alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
-alias pingpi45="ping 192.168.2.45"
-alias sshpi45="ssh eljfe@192.168.2.45"
 alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 
+alias dict="curl dict://dict.org/d:" 			# online english dictionary lookup
 # kitty specific 
 # if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
 #   alias ssh="kitty +kitten ssh"
@@ -145,10 +146,10 @@ alias sshjs="ssh u52305743@home276229807.1and1-data.host"
 # https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 # pihole fail
 if test -n "$KITTY_INSTALLATION_DIR"; then
-	    export KITTY_SHELL_INTEGRATION="enabled"
-		    autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-			    kitty-integration
-				    unfunction kitty-integration
+    export KITTY_SHELL_INTEGRATION="enabled"
+    autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+    kitty-integration
+    unfunction kitty-integration
 fi
 # }}}
 
