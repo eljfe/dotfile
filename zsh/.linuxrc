@@ -3,7 +3,7 @@
 
 gitbin="/usr/bin/git" 
 export PATH="${PATH}:/usr/local/lib/python3.11:${HOME}/.config/emacs/bin"
-export PYTHONPATH="/srv/dotfile/.local/lib/python-3x/site-packages/"
+export PYTHONPATH="/srv/.local/lib/python-3x/site-packages/"
 alias ll='ls -lAFh --color'
 alias emacs='emacsclient -c -a "emacs"'
 
