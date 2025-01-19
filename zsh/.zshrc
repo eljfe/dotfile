@@ -136,7 +136,7 @@ alias sshpi="ssh pi@pihole.shevylan"
 alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
 alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh u52305743@home276229807.1and1-data.host"
-
+alias gh="grephist"
 alias dict="curl dict://dict.org/d:" 			# online english dictionary lookup
 # kitty specific 
 # if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
@@ -152,6 +152,14 @@ if test -n "$KITTY_INSTALLATION_DIR"; then
     unfunction kitty-integration
 fi
 # }}}
+
+
+#{{{ FUNCTIONS
+
+grephist() {
+	grep "$1" ~/.zsh_history
+}
+#}}}
 
 #{{{ BIND KEYS
 
