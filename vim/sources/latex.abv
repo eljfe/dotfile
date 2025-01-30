@@ -17,16 +17,25 @@
 "
 " ## latex
 " 
-" ### align 
 
-iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
-" iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI
 
 " ### brackets and braces
 
 iab lrp \left( \right) <ESC>8<LEFT>i
 iab lra \left\| \right\| <ESC>8<LEFT>i
 iab lrb \left[ \right] <ESC>8<LEFT>i
+
+" ### document sections
+
+iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
+" iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI
+
+" iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{|c|c|}<ESC>O\hline<ESC>o
+iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{\|c\|c\|}<ESC>O\hline<ESC>o
+iab itemm \begin{itemize}<ESC>o<ESC>I\end{itemize}<ESC>O\item
+iab enumm \begin{enumerate}<ESC>o<ESC>I\end{enumerate}<ESC>O\item
+iab quoth \begin{quote}<ESC>o<ESC>I\end{quote}<ESC>O
+iab prooff \begin{proof}<ESC>o<ESC>I\end{proof}<ESC>O
 
 " ### fractions
 
@@ -55,3 +64,22 @@ iab ddx \tfrac{d}{dx}
 iab dydx \tfrac{dy}{dx}
 
 iab pi \pi
+
+" ### logic operators
+
+iab r-> \rightarrow
+iab l-> \leftarrow
+iab lr-> \leftrightarrow
+
+" ### sets
+
+iab srn \mathbb{R}
+iab snn \mathbb{N}
+iab sin \mathbb{Z}
+iab sqn \mathbb{Q}
+
+" ### text formatting
+
+iab ital \textit{}<ESC>i
+iab bold \textbf{}<ESC>i
+iab uline \underline{}<ESC>i
