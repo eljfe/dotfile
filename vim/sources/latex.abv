@@ -18,6 +18,8 @@
 " ## latex
 " 
 
+" quality of life hacks
+iab $$ $$<ESC>h
 
 " ### brackets and braces
 
@@ -28,6 +30,7 @@ iab lrb \left[ \right] <ESC>8<LEFT>i
 " ### document sections
 
 iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
+iab algn* \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
 " iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI
 
 " iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{|c|c|}<ESC>O\hline<ESC>o
@@ -36,6 +39,8 @@ iab itemm \begin{itemize}<ESC>o<ESC>I\end{itemize}<ESC>O\item
 iab enumm \begin{enumerate}<ESC>o<ESC>I\end{enumerate}<ESC>O\item
 iab quoth \begin{quote}<ESC>o<ESC>I\end{quote}<ESC>O
 iab prooff \begin{proof}<ESC>o<ESC>I\end{proof}<ESC>O
+iab lemm \begin{lem}<ESC>o<ESC>I\end{lem}<ESC>O
+iab ccase \begin{case}<ESC>o<ESC>I\end{case}<ESC>O
 
 " ### fractions
 
