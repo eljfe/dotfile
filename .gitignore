@@ -23,6 +23,16 @@ vim/*
 !vim/sources/*
 # all the packages and their git repos are ignored
 
+!ipython/*
+# !ipython
+# ipython/*
+# # 2025.02
+# # !*.py
+# # ipython/profile_default/*
+# ipython/profile_default/*
+# !ipython/profile_default/
+# # !ipython/profile_default/*.py
+# !ipython/profile_default/ipython_config.py
 
 kitty/**
 # 2024.06
@@ -31,4 +41,5 @@ kitty/**
 !kitty/kitty-tree.txt
 
 !*.txt
+**/.DS_Store
 # !*.md
