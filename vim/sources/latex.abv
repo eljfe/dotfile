@@ -19,18 +19,20 @@
 " 
 
 " quality of life hacks
-iab $$ $$<ESC>h
 
 " ### brackets and braces
 
 iab lrp \left( \right) <ESC>8<LEFT>i
+iab lr( \left( \right) <ESC>8<LEFT>i
 iab lra \left\| \right\| <ESC>8<LEFT>i
+iab lrmid \left\| \right\| <ESC>8<LEFT>i
 iab lrb \left[ \right] <ESC>8<LEFT>i
+iab lr[ \left[ \right] <ESC>8<LEFT>i
 
 " ### document sections
 
 iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
-iab algn* \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
+iab algnnum \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
 " iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI
 
 " iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{|c|c|}<ESC>O\hline<ESC>o
@@ -42,6 +44,10 @@ iab prooff \begin{proof}<ESC>o<ESC>I\end{proof}<ESC>O
 iab lemm \begin{lem}<ESC>o<ESC>I\end{lem}<ESC>O
 iab ccase \begin{case}<ESC>o<ESC>I\end{case}<ESC>O
 
+" ### document miscellany
+
+iab hfill <ESC>o\hfill<CR>
+
 " ### fractions
 
 iab tfrac \tfrac{}{} <ESC>3<LEFT>i
@@ -52,6 +58,7 @@ iab dfrac \dtrac{}{} <ESC>3<LEFT>i
 
 iab sqrt \sqrt{}<ESC>i
 iab cdot \cdot
+iab XX \times
 
 " ### trig
 
@@ -72,16 +79,36 @@ iab pi \pi
 
 " ### logic operators
 
-iab r-> \rightarrow
-iab l-> \leftarrow
-iab lr-> \leftrightarrow
+iab rarrow \rightarrow
+iab larrow \leftarrow
+iab lrarrow \leftrightarrow
+iab limplies \implies
+
+iab lwedge \wedge
+iab lvee \vee
+iab lneg \neg
+ 
+iab lforall \forall
+iab lnforall \nforall
+iab lexists \exists
+iab lnexists \nexists
 
 " ### sets
+
+iab lmid \mid
 
 iab srn \mathbb{R}
 iab snn \mathbb{N}
 iab sin \mathbb{Z}
 iab sqn \mathbb{Q}
+
+iab lcup \cup
+iab lcap \cap
+iab lbigcup \bigcup
+iab lbigcap \bigcap
+
+iab sseteq \subseteq
+iab sset \subset
 
 " ### text formatting
 
