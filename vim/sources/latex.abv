@@ -28,6 +28,8 @@ iab lra \left\| \right\| <ESC>8<LEFT>i
 iab lrmid \left\| \right\| <ESC>8<LEFT>i
 iab lrb \left[ \right] <ESC>8<LEFT>i
 iab lr[ \left[ \right] <ESC>8<LEFT>i
+iab lblock \[\] <ESC>2<LEFT>i
+iab lset \{\} <ESC>2<LEFT>i
 
 " ### document sections
 
@@ -59,6 +61,8 @@ iab dfrac \dtrac{}{} <ESC>3<LEFT>i
 iab sqrt \sqrt{}<ESC>i
 iab cdot \cdot
 iab XX \times
+iab lsim \sim
+iab lequiv \equiv
 
 " ### trig
 
