@@ -45,6 +45,7 @@ iab quoth \begin{quote}<ESC>o<ESC>I\end{quote}<ESC>O
 iab prooff \begin{proof}<ESC>o<ESC>I\end{proof}<ESC>O
 iab lemm \begin{lem}<ESC>o<ESC>I\end{lem}<ESC>O
 iab ccase \begin{case}<ESC>o<ESC>I\end{case}<ESC>O
+iab lfootnote \footnote{}<ESC>i
 
 " ### document miscellany
 
