@@ -22,15 +22,16 @@ set shortmess-=S					" displays number of search 'hits'
 set shiftwidth=4
 set tabstop=4
 set scrolloff=10 					" keeps the cursor mid-high as you scroll	
-set nowrap          	 			" forces lines all the way	
-									" :set wrap toggles and :set linebreak
-									" helps too
+" set nowrap          	 			" forces lines all the way	
+set wrap  							" wraps at screen edge
+set linebreak 						" prevents word splitting
 set autoread           				" Reload files that have not been modified	
 set backspace=2         			" Makes backspace behave right
 set t_Co=256   						" set colourspace	
 set splitbelow splitright 			" new splits appear as expected	
 
-set foldmethod=marker
+set foldmethod=indent
+" set foldmethod=marker
 "set foldmethod=manual
 set foldlevel=99
 set timeoutlen=2900					" slows down chording of key mappings so 	
