@@ -115,6 +115,8 @@ iab lbigcap \bigcap
 iab sseteq \subseteq
 iab sset \subset
 
+iab lmathcal \mathcal{}<ESC>i
+
 " ### text formatting
 
 iab ital \textit{}<ESC>i
