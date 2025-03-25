@@ -50,6 +50,7 @@ iab lfootnote \footnote{}<ESC>i
 " ### document miscellany
 
 iab hfill <ESC>o\hfill<CR>
+iab ltext \text{}<ESC>i
 
 " ### fractions
 
@@ -114,6 +115,8 @@ iab lbigcap \bigcap
 
 iab sseteq \subseteq
 iab sset \subset
+
+iab lempty \emptyset
 
 iab lmathcal \mathcal{}<ESC>i
 
