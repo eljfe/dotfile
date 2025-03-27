@@ -20,6 +20,8 @@
 
 " quality of life hacks
 
+iab $$ $$<ESC>i
+
 " ### brackets and braces
 
 iab lrp \left( \right) <ESC>8<LEFT>i
@@ -88,6 +90,8 @@ iab pi \pi
 iab rarrow \rightarrow
 iab larrow \leftarrow
 iab lrarrow \leftrightarrow
+iab longrarrow \longrightarrow
+iab longlarrow \longleftarrow
 iab limplies \implies
 
 iab lwedge \wedge
