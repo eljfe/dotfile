@@ -37,9 +37,7 @@ iab lset \{\} <ESC>2<LEFT>i
 
 iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
 iab algnnum \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
-" iab algn \begin{align}<ESC>4o<ESC>I\end{align}<ESC>o<ESC>3kI
 
-" iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{|c|c|}<ESC>O\hline<ESC>o
 iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{\|c\|c\|}<ESC>O\hline<ESC>o
 iab itemm \begin{itemize}<ESC>o<ESC>I\end{itemize}<ESC>O\item
 iab enumm \begin{enumerate}<ESC>o<ESC>I\end{enumerate}<ESC>O\item
@@ -106,11 +104,13 @@ iab lnexists \nexists
 " ### sets
 
 iab lmid \mid
+iab lin \in
 
 iab srn \mathbb{R}
 iab snn \mathbb{N}
 iab sin \mathbb{Z}
 iab sqn \mathbb{Q}
+iab scn \mathbb{C}
 
 iab lcup \cup
 iab lcap \cap
