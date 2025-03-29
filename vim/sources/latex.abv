@@ -90,7 +90,9 @@ iab larrow \leftarrow
 iab lrarrow \leftrightarrow
 iab longrarrow \longrightarrow
 iab longlarrow \longleftarrow
+
 iab limplies \implies
+iab liff \iff
 
 iab lwedge \wedge
 iab lvee \vee
@@ -119,8 +121,9 @@ iab lbigcap \bigcap
 
 iab sseteq \subseteq
 iab sset \subset
+iab s- \setminus
 
-iab lempty \emptyset
+iab sempty \emptyset
 
 iab lmathcal \mathcal{}<ESC>i
 
