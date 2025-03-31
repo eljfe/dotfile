@@ -21,6 +21,7 @@
 " quality of life hacks
 
 iab $$ $$<ESC>i
+iab ldiamond \diamond
 
 " ### brackets and braces
 
@@ -38,6 +39,7 @@ iab llrcb \left\{\right\}<ESC>7hi
 
 iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
 iab algns \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
+iab mline \begin{multline}<ESC>o<ESC>I\end{multline}<ESC>O
 
 iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{\|c\|c\|}<ESC>O\hline<ESC>o
 iab itemm \begin{itemize}<ESC>o<ESC>I\end{itemize}<ESC>O\item
