@@ -39,6 +39,8 @@ iab llrcb \left\{\right\}<ESC>7hi
 
 iab algn \begin{align}<ESC>o<ESC>I\end{align}<ESC>O
 iab algns \begin{align*}<ESC>o<ESC>I\end{align*}<ESC>O
+iab eqq \begin{equation}<ESC>o<ESC>I\end{equation}<ESC>O
+iab eqqs \begin{equation*}<ESC>o<ESC>I\end{equation*}<ESC>O
 iab mline \begin{multline}<ESC>o<ESC>I\end{multline}<ESC>O
 
 iab tabb \begin{tabular}<ESC>o<ESC>I\end{tabular}{\|c\|c\|}<ESC>O\hline<ESC>o
@@ -49,6 +51,10 @@ iab prooff \begin{proof}<ESC>o<ESC>I\end{proof}<ESC>O
 iab lemm \begin{lem}<ESC>o<ESC>I\end{lem}<ESC>O
 iab ccase \begin{case}<ESC>o<ESC>I\end{case}<ESC>O
 iab lfootnote \footnote{}<ESC>i
+
+iab llabel \label{}<ESC>i
+iab lref \ref{}<ESC>i
+iab ltag \tag{}<ESC>i
 
 " ### document miscellany
 
@@ -128,7 +134,7 @@ iab lcap \cap
 iab lbigcup \bigcup
 iab lbigcap \bigcap
 
-iab sseteq \subseteq
+iab ssete \subseteq
 iab sset \subset
 iab s- \setminus
 
