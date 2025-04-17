@@ -26,7 +26,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 
 #}}}
 
-alias ll='ls -laFG'
+alias ll='ls -laFGh'
 alias ggit="/usr/local/bin/git"  # homebrew git
 
 git-python-utils() { 
