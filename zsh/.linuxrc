@@ -3,10 +3,7 @@
 
 gitbin="/usr/bin/git" 
 export PATH="${PATH}:/usr/local/lib/python3.11:${HOME}/.config/emacs/bin"
-export PYTHONPATH="/srv/.local/lib/python-3x/site-packages/"
-export FINDATA_PATH="/srv/financials"
 alias ll='ls -lAFh --color'
-alias emacs='emacsclient -c -a "emacs"'
 
 # battery percent
 set -o PROMPT_SUBST
@@ -35,4 +32,6 @@ if [ $(hostname) = obsequious ]; then
 	source $DOTFILES/zsh/.obsequious
 elif [ $(hostname) = loiridium ]; then
 	source $DOTFILES/zsh/.loiridium
+elif [ $(hostname) = loiridium ]; then
+	source $DOTFILES/zsh/.pinkthad
 fi
