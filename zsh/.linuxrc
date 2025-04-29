@@ -2,7 +2,7 @@
 # linux OS specific settings only
 
 gitbin="/usr/bin/git" 
-export PATH="${PATH}:/usr/local/lib/python3.11:${HOME}/.config/emacs/bin"
+export PATH="${PATH}:/usr/local/lib/python3.11"
 alias ll='ls -lAFh --color'
 
 # battery percent
@@ -32,6 +32,6 @@ if [ $(hostname) = obsequious ]; then
 	source $DOTFILES/zsh/.obsequious
 elif [ $(hostname) = loiridium ]; then
 	source $DOTFILES/zsh/.loiridium
-elif [ $(hostname) = loiridium ]; then
-	source $DOTFILES/zsh/.pinkthad
+elif [ $(hostname) = pinkthad ]; then
+	source ${DOTFILES}/zsh/.pinkthad
 fi
