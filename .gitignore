@@ -6,6 +6,7 @@ zsh/*
 !manjaro*
 !.obsequious
 !.loiridium
+!.pinkthad
 # all the plugins and their git repos are ignored except the _README.md
 # 1 except the plugins folder
 !zsh/plugins
