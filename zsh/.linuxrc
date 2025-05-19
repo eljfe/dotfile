@@ -2,7 +2,9 @@
 # linux OS specific settings only
 
 gitbin="/usr/bin/git" 
-export PATH="${PATH}:/usr/local/lib/python3.11"
+pybin="/usr/local/lib/python3.11"
+localscripts="${HOME}/.local/bin/scripts"
+export PATH="${PATH}:${pybin}:${localscripts}"
 alias ll='ls -lAFh --color'
 
 # battery percent
