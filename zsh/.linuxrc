@@ -9,7 +9,7 @@ alias ll='ls -lAFh --color'
 
 # battery percent
 set -o PROMPT_SUBST
-bat () {
+batt () {
     echo $(cat /sys/class/power_supply/BAT0/capacity)%
 }
 # bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)
