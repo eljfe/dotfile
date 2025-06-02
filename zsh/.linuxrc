@@ -29,6 +29,10 @@ ctemp () {
 
 alias killemacsd='emacsclient -e "(kill-emacs)"'
 alias ttc='xclip -selection clipboard'
+# 'bat' is a cat alternative 
+# 'bat' has a namespace conflict with another Debain package
+# 	hence alias
+alias bat='batcat'
 
 if [ $(hostname) = obsequious ]; then
 	source $DOTFILES/zsh/.obsequious
