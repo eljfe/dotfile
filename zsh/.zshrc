@@ -135,7 +135,7 @@ alias pingpi="ping 192.168.2.200"
 alias sshpi="ssh pi@pihole.shevylan"
 alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
 alias scanlocal="nmap -sn 192.168.2.0/24"
-alias sshjs="ssh u52305743@home276229807.1and1-data.host"
+alias sshjs="ssh a1936719@access-5018074189.webspace-host.com"
 alias gh="grephist"
 alias dict="curl dict://dict.org/d:" 			# online english dictionary lookup
 # kitty specific 
