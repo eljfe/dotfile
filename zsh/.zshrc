@@ -45,6 +45,8 @@ elif [[ $hn == "obsequious" ]]; then
     export PS1=$PS1"🧅 "
 elif [[ $hn == "loiridium" ]]; then
     export PS1=$PS1"🧨 "
+elif [[ $hn == "pinkthad" ]]; then
+    export PS1="$PS1🌵 "
 else
     export PS1="$PS1🌭 "
 fi
