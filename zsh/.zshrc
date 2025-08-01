@@ -121,6 +121,9 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# for use with pass the password store's autocompletion
+autoload -Uz compinit && compinit
 #}}}
 #}}} 
 
