@@ -3,8 +3,9 @@
 
 gitbin="/usr/bin/git" 
 pybin="/usr/local/lib/python3.11"
-localscripts="${HOME}/.local/bin/scripts"
-export PATH="${PATH}:${pybin}:${localscripts}"
+localbin="${HOME}/.local/bin"
+# localscripts="${localbin}/scripts"
+export PATH="${PATH}:${pybin}:${localbin}"
 alias ll='ls -lAFh --color'
 
 # battery percent
