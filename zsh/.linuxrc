@@ -7,7 +7,7 @@ localbin="${HOME}/.local/bin"
 # localscripts="${localbin}/scripts"
 export PATH="${PATH}:${pybin}:${localbin}"
 
-pwsd=/srv/Syncthing/password-store
+pwsd=/srv/Syncthing/password-store/.password-store
 export PASSWORD_STORE_DIR=$pwsd
 
 alias ll='ls -lAFh --color'
