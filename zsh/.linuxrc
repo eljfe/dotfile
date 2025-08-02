@@ -6,6 +6,10 @@ pybin="/usr/local/lib/python3.11"
 localbin="${HOME}/.local/bin"
 # localscripts="${localbin}/scripts"
 export PATH="${PATH}:${pybin}:${localbin}"
+
+pwsd=/srv/Syncthing/password-store
+export PASSWORD_STORE_DIR=$pwsd
+
 alias ll='ls -lAFh --color'
 
 # battery percent
