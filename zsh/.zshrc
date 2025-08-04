@@ -143,6 +143,9 @@ alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh a1936719@access-5018074189.webspace-host.com"
 alias gh="grephist"
 alias dict="curl dict://dict.org/d:" 			# online english dictionary lookup
+alias sqlite="sqlite3 -header -column"
+alias nvim="env -u VIMINIT nvim" 				# escapes VIMINIT and allows
+												#   nvim to run w/o vim settgs
 # kitty specific 
 # if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
 #   alias ssh="kitty +kitten ssh"
