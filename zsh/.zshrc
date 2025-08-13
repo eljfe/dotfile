@@ -142,7 +142,7 @@ alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
 alias scanlocal="nmap -sn 192.168.2.0/24"
 alias sshjs="ssh a1936719@access-5018074189.webspace-host.com"
 alias gh="grephist"
-alias dict="curl dict://dict.org/d:" 			# online english dictionary lookup
+alias dict="dictionary_lookup" 			# online english dictionary lookup
 alias sqlite="sqlite3 -header -column"
 alias nvim="env -u VIMINIT nvim" 				# escapes VIMINIT and allows
 												#   nvim to run w/o vim settgs
@@ -163,7 +163,13 @@ fi
 
 
 #{{{ FUNCTIONS
-
+dictionary_lookup() {
+	# there are many interesting dictionaries to choose from 
+	# including `jargon` or `fd-fra-eng` which translates french to english
+	# or even `devil` 200yr old Devil's dictionary :-)
+	echo dict://dict.org/d:{$1}:english
+	curl dict://dict.org/d:{$1}:english
+}
 grephist() {
 	grep "$1" ~/.zsh_history
 }
@@ -210,6 +216,6 @@ ZVM_VI_SURROUND_BINDKEY='classic'
 
 #}}}
 
-#{{{ some old junk
-
+#{{{ RUST config
+. "$HOME/.cargo/env" 
 #}}}
