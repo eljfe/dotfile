@@ -217,5 +217,8 @@ ZVM_VI_SURROUND_BINDKEY='classic'
 #}}}
 
 #{{{ RUST config
-. "$HOME/.cargo/env" 
+if [ -z "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env" 
+fi
+# . "$HOME/.cargo/env" 
 #}}}
