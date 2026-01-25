@@ -43,7 +43,14 @@ set timeoutlen=2900					" slows down chording of key mappings so
 " and the env variables there in                                                
 set runtimepath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after     
 set packpath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after        
-
+" the setting below solved an E303 error on EndeavourOS
+" which prevented vim from using `swp` files correctly
+" thx to [this
+" site](https://www.baeldung.com/linux/vim-swap-files#change-default-storage-location)
+" ... and
+" [this SE post](https://vi.stackexchange.com/questions/13907/how-to-resolve-e303-unable-to-open-swap-file-on-linux-machine)
+set directory^=$HOME/.vim/tmp//
+set backupdir^=$HOME/.vim/tmp//
 "}}}
 
 "{{{ KEY MAPPING
