@@ -30,7 +30,8 @@ hn=$(hostname)
 # ... fine but IT DOESN'T WORK.  FSR it eats commands.  Try `whoami` or `pwd`
 # PS1=$'\n\n\n\n\n\e[6A'
 # basic shared prompt
-PS1=$'%F{243}%n@%m%f %F{192}%1~%f '
+PS1=$'%F{243}%n%f %F{192}%1~%f '
+# PS1=$'%F{243}%n@%m%f %F{192}%1~%f '
 if [[ $hn == "mac-office.shevy-lan" ]]; then
     export PS1="$PS1\U1F332 "
 elif [[ $hn == "asus-laptop" ]]; then
