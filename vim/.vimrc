@@ -41,8 +41,8 @@ set timeoutlen=2900					" slows down chording of key mappings so
 " 2023.07                                                                       
 " this is a big deal... in cordination with .zshrc                              
 " and the env variables there in                                                
-set runtimepath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after     
-set packpath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after        
+set runtimepath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim
+set packpath=$DOTFILES/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim
 " the setting below solved an E303 error on EndeavourOS
 " which prevented vim from using `swp` files correctly
 " thx to [this
