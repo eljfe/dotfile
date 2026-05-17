@@ -29,7 +29,6 @@ export CLICOLOR="Yes"
 # packages are moved into a shared directory on each machine.                   
 # Too many machines, too many users (14 at the time of this writing - 2023.07)  
 
-# TODO: need to tweak
 container_test ()
 {
   hn=$(echo $(hostname))
@@ -44,7 +43,6 @@ os=$(uname)
 if [[ $os == "Darwin" ]]; then
 	osrc="/Users/Shared/.config/zsh/.macrc" 
 elif [[ $os == "Linux" ]]; then
-  # TODO: need to tweak
   if [[ $(container_test) == 1 ]]; then
     osrc="${HOME}/.zsh/.containerrc" 
   else 
