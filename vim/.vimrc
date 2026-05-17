@@ -118,11 +118,11 @@ set colorcolumn=80        " Highlight 80 character limit
 syntax on
 
 " vimdiff colouring
-if &diff
-	colorscheme desert
-else
-	colorscheme sitruuna
-endif
+" if &diff
+" 	colorscheme desert
+" else
+" 	colorscheme sitruuna
+" endif
 "}}}
 
 "{{{ PLUGINS
@@ -135,10 +135,7 @@ endif
 "{{{ Lightline Theme
 set laststatus=2
 set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      "\ 'colorscheme': 'wombat',
-      \ }
+let g:lightline = {  'colorscheme': 'one',  }
 
 "}}}
 
