@@ -102,19 +102,12 @@ autoload -Uz compinit && compinit
 #    git dotfile repo/ one per machine setup
 
 alias v=vim
-alias vz="vim $ZDOTDIR/.zshrc"
-alias sz="source $ZDOTDIR/.zshrc"
-alias vv="vim $DOTFILES/vim/.vimrc"
-alias pingpi="ping 192.168.2.200"
-alias sshpi="ssh pi@pihole.shevylan"
-alias sshob="ssh eljfe@obsequious.shevylan" 	# obsequious.local breaks
-alias scanlocal="nmap -sn 192.168.2.0/24"
-alias sshjs="ssh a1936719@access-5018074189.webspace-host.com"
 alias gh="grephist"
 alias dict="dictionary_lookup" 			# online english dictionary lookup
 alias sqlite="sqlite3 -header -column"
 alias nvim="env -u VIMINIT nvim" 				# escapes VIMINIT and allows
 												#   nvim to run w/o vim settgs
+
 # kitty specific 
 # if [[ -n $TERM && "xterm-kitty" == $TERM  ]]; then
 #   alias ssh="kitty +kitten ssh"
@@ -178,16 +171,9 @@ ZVM_VI_SURROUND_BINDKEY='classic'
 
 #}}}
 
-#{{{ 3RD PARTY APP INTEGRATION
-
-# for use with pass the password manager
-# fpath=(/opt/local/share/zsh/site-functions $fpath)
-
-#}}}
 
 #{{{ RUST config
 if [ -z "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env" 
 fi
-# . "$HOME/.cargo/env" 
 #}}}

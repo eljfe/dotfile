@@ -54,12 +54,12 @@ export FINDATA_PATH
 # export CMDSTAN_HOME
 # export JULIA_CMDSTAN_HOME
 
+############# ALIAS's #############
 # battery percent
 set -o PROMPT_SUBST
 batt () {
     echo $(cat /sys/class/power_supply/BAT0/capacity)%
 }
-# bat=$echo$(cat /sys/class/power_supply/BAT0/capacity)
 
 round () { echo $(( ($1 + $2/2) / $2 )) }
 roundf () { printf "%.${2:-0}f" "$1" }
@@ -73,9 +73,6 @@ ctemp () {
 
 # acpi | awk -F, '{print $2}' | sed 's/^ //'
 # export RPROMPT="%F{124}%*/$(bat)%%"
-
-alias killemacsd='emacsclient -e "(kill-emacs)"'
-alias ttc='xclip -selection clipboard'
 
 # 'bat' is a cat alternative 
 # 'bat' has a namespace conflict with another Debain package hence alias
@@ -91,3 +88,15 @@ elif [ $(hostname) = loiridium ]; then
 elif [ $(hostname) = pinkthad ]; then
 	source ${DOTFILES}/zsh/.pinkthad
 fi
+
+
+alias ll='ls -lAFh --color'
+alias vz="vim $ZDOTDIR/.zshrc"
+alias sz="source $ZDOTDIR/.zshrc"
+alias vv="vim $DOTFILES/vim/.vimrc"
+alias pingpi="ping 192.168.2.200"
+alias sshpi="ssh pi@pihole.local"
+alias sshob="ssh eljfe@obsequious.local" 	# obsequious.local breaks
+alias scanlocal="nmap -sn 192.168.2.0/24"
+alias ttc='xclip -selection clipboard'
+
