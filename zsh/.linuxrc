@@ -35,12 +35,24 @@ export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"
 
 localbin="${HOME}/.local/bin"
 # localscripts="${localbin}/scripts"
-export PATH="${PATH}:${pybin}:${localbin}"
+xPATH="usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${PATH}:${localbin}:${xPATH}"
 
-pwsd=/srv/Syncthing/password-store/.password-store
-export PASSWORD_STORE_DIR=$pwsd
+gitbin="/usr/bin/git" 
 
-alias ll='ls -lAFh --color'
+# CMDSTAN_HOME="$HOME/.stan/cmdstan"
+# JULIA_CMDSTAN_HOME="$HOME/.stan/cmdstan"
+
+# this PYTHONPATH setting requires `:` path seperators
+PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
+PYTHONPATH="${PYTHONPATH}:${DOTFILES}/../.local/lib/python-3x/site-packages"
+export PYTHONPATH
+
+# KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
+FINDATA_PATH="/srv/financials"
+export FINDATA_PATH
+# export CMDSTAN_HOME
+# export JULIA_CMDSTAN_HOME
 
 # battery percent
 set -o PROMPT_SUBST

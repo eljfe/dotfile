@@ -26,10 +26,15 @@ export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"
 
 gitbin="/usr/local/bin/git" 
 
-# {{{ PROGRAMMING VARIABLES
+pybin="/usr/local/lib/python3.11"
+localbin="${HOME}/.local/bin"
+# localscripts="${localbin}/scripts"
+export PATH="${PATH}:${pybin}:${localbin}"
 
 # this PYTHONPATH setting requires `:` path seperators
-export PYTHONPATH="$HOME/.local/lib/python-3x/site-packages:$DOTFILES/../.local/lib/python-3x/site-packages"
+PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
+PYTHONPATH="${PYTHONPATH}:${DOTFILES}/../.local/lib/python-3x/site-packages"
+export PYTHONPATH
 
 # KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
 BUDGET_PATH="$HOME/Documents/Business/Financials/Budget"
@@ -45,13 +50,14 @@ export PYLOCAL
 # export CMDSTAN_HOME
 # export JULIA_CMDSTAN_HOME
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:$HOME/Library/Python/3.10/bin:$HOME/.emacs.d/bin:$LATEXPATH"
+xPATH="usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+xPATH="${xPATH}:/Library/Apple/usr/bin:$HOME/Library/Python/3.11/bin:"
+xPATH="${xPATH}:$HOME/Library/Python/3.10/bin:$LATEXPATH"
+PATH="${PATH}:${xPATH}"
+export PATH
 
-#}}}
-
-alias ll='ls -laFGh'
-alias ggit="/usr/local/bin/git"  # homebrew git
-
+#
+############# ALIAS's #############
 git-python-utils() { 
 	ggit --git-dir="${HOME}/.local/lib/.git/" \
 		--work-tree="$HOME/.local/lib/" "$@" ; 

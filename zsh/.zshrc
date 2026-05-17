@@ -28,35 +28,34 @@ export CLICOLOR="Yes"
 # the current setup = all `zsh`, `vim` and `kitty` .*rc's and                   
 # packages are moved into a shared directory on each machine.                   
 # Too many machines, too many users (14 at the time of this writing - 2023.07)  
-os=$(uname)                                                                     
-if [[ $os == "Darwin" ]]; then                                                  
-	osrc=".macrc" 
-	export DOTFILES='/Users/Shared/.config'                                     
-	source "$DOTFILES/zsh/$osrc"
-elif [[ $os == "Linux" ]]; then                                                 
-	osrc=".linuxrc" 
-	export DOTFILES='/srv/dotfile/.config'                                      
-	source "$DOTFILES/zsh/$osrc"
-else                                                                            
-    echo "unknown os! ... $os"                                                  
-fi                                                                              
+
+# TODO: need to tweak
+container_test ()
+{
+  hn=$(echo $(hostname))
+  if [[ $hn == *"$1"* ]]; then
+    echo 1
+  else
+    echo 0
+  fi
+}
+
+os=$(uname)
+if [[ $os == "Darwin" ]]; then
+	osrc="/Users/Shared/.config/zsh/.macrc" 
+elif [[ $os == "Linux" ]]; then
+  # TODO: need to tweak
+  if [[ $(container_test "container") == 1 ]]; then
+    osrc="~/.zsh/.containerrc" 
+  else 
+    osrc="/srv/dotfile/.config/zsh/.linuxrc" 
+  fi
+else
+  echo "unknown os! ... $os"
+fi
+source "$osrc"
 # unset os                                      
 
-export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
-export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
-
-# $gitbin set in $osrc
-git-dotfile() { 
-	$gitbin --git-dir="${DOTFILES}/.git/" \
-		--work-tree="$DOTFILES" "$@" ; 
-}
-# }}}
-
-# PATH variables in $osrc
-
-# {{{ PROGRAMMING VARIABLES
-# see $osrc
-#}}}
 
 # {{{ ZSH COMMANDLINE BEHAVIOURS
 setopt correct                                                  # Auto correct mistakes
