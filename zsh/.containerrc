@@ -1,0 +1,48 @@
+# this is a child of `/.zshrc`
+# linux container OS specific settings only
+
+############# PROMPT #############
+export RPROMPT='%F{124}%*%f'
+hn=$(hostname)
+# this line creates a 6 line bottom gutter so you aren't always typing 
+# ... in the bottom cm of the screen.  6 newlines, and `/e[6A` apparently
+# ... bumps the prompt back up by 6.
+# ... fine but IT DOESN'T WORK.  FSR it eats commands.  Try `whoami` or `pwd`
+# PS1=$'\n\n\n\n\n\e[6A'
+# basic shared prompt
+PS1=$'%F{243}%n%f %F{192}%1~%f '
+export PS1="$PS1✳️ "
+
+############# ENV variables #############
+# export VIMINIT="source ~/.vim/.vimrc"                                    
+
+localbin="${HOME}/.local/bin"
+xPATH="usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="${PATH}:${localbin}:${xPATH}"
+
+# this PYTHONPATH setting requires `:` path seperators
+PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
+export PYTHONPATH
+
+
+############# ALIAS's #############
+# battery percent
+set -o PROMPT_SUBST
+batt () {
+    echo $(cat /sys/class/power_supply/BAT0/capacity)%
+}
+
+round () { echo $(( ($1 + $2/2) / $2 )) }
+roundf () { printf "%.${2:-0}f" "$1" }
+
+# 'bat' is a cat alternative 
+# 'bat' has a namespace conflict with another Debain package hence alias
+distro=$(grep '^ID=' /etc/os-release | cut -d '=' -f 2 | tr -d '"')
+if [ $distro = debian ]; then
+	alias bat='batcat'
+fi
+
+
+alias ll='ls -lAFh --color'
+
+
