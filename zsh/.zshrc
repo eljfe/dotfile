@@ -21,37 +21,6 @@ INSERT_MODE_INDICATOR="%F{yellow}+%f" # changes cursor to a yellow |
 HIST_STAMPS="yyyy-mm-dd"
 export CLICOLOR="Yes"
 
-# {{{ PROMPT
-export RPROMPT='%F{124}%*%f'
-hn=$(hostname)
-# this line creates a 6 line bottom gutter so you aren't always typing 
-# ... in the bottom cm of the screen.  6 newlines, and `/e[6A` apparently
-# ... bumps the prompt back up by 6.
-# ... fine but IT DOESN'T WORK.  FSR it eats commands.  Try `whoami` or `pwd`
-# PS1=$'\n\n\n\n\n\e[6A'
-# basic shared prompt
-PS1=$'%F{243}%n%f %F{192}%1~%f '
-# PS1=$'%F{243}%n@%m%f %F{192}%1~%f '
-if [[ $hn == "mac-office.shevy-lan" ]]; then
-    export PS1="$PS1\U1F332 "
-elif [[ $hn == "asus-laptop" ]]; then
-    export PS1="$PS1\U1F4A5 "
-elif [[ $hn == "sherrysmbp" ]]; then
-    export PS1=$PS1"🐌 "
-elif [[ $hn =~ ".*mothership.*" ]]; then
-	export PS1=$PS1"🌲 "
-elif [[ $hn == "pihole" ]]; then
-    export PS1=$PS1"🥧 "
-elif [[ $hn == "obsequious" ]]; then
-    export PS1=$PS1"🧅 "
-elif [[ $hn == "loiridium" ]]; then
-    export PS1=$PS1"🧨 "
-elif [[ $hn == "pinkthad" ]]; then
-    export PS1="$PS1🌵 "
-else
-    export PS1="$PS1🌭 "
-fi
-# }}}
 
 # {{{ DOTFILEREPO SETTINGS
 # fancy config file footwork.                                                   

@@ -1,6 +1,29 @@
 # this is a child of `/.zshrc`
 # macOS specific settings only
 
+
+############# PROMPT #############
+hn=$(hostname)
+# this line creates a 6 line bottom gutter so you aren't always typing 
+# ... in the bottom cm of the screen.  6 newlines, and `/e[6A` apparently
+# ... bumps the prompt back up by 6.
+# ... fine but IT DOESN'T WORK.  FSR it eats commands.  Try `whoami` or `pwd`
+# PS1=$'\n\n\n\n\n\e[6A'
+# basic shared prompt
+PS1=$'%F{243}%n%f %F{192}%1~%f '
+# PS1=$'%F{243}%n@%m%f %F{192}%1~%f '
+if [[ $hn =~ ".*mothership.*" ]]; then
+	  export PS1=$PS1"🌲 "
+else
+    export PS1="$PS1🌭 "
+fi
+
+############# ENV variables #############
+export DOTFILES='/Users/Shared/config'                                      
+export VIMINIT="source $DOTFILES/vim/.vimrc"                                    
+export KITTY_CONFIG_DIRECTORY="$DOTFILES/kitty"                                 
+
+
 gitbin="/usr/local/bin/git" 
 
 # {{{ PROGRAMMING VARIABLES
