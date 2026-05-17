@@ -33,7 +33,7 @@ export CLICOLOR="Yes"
 container_test ()
 {
   hn=$(echo $(hostname))
-  if [[ $hn == *"$1"* ]]; then
+  if [[ $hn == *"container"* ]]; then
     echo 1
   else
     echo 0
@@ -45,8 +45,8 @@ if [[ $os == "Darwin" ]]; then
 	osrc="/Users/Shared/.config/zsh/.macrc" 
 elif [[ $os == "Linux" ]]; then
   # TODO: need to tweak
-  if [[ $(container_test "container") == 1 ]]; then
-    osrc="~/.zsh/.containerrc" 
+  if [[ $(container_test) == 1 ]]; then
+    osrc="${HOME}/.zsh/.containerrc" 
   else 
     osrc="/srv/dotfile/.config/zsh/.linuxrc" 
   fi
