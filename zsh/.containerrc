@@ -17,8 +17,8 @@ export PS1="$PS1✳️ "
 # export VIMINIT="source ~/.vim/.vimrc"                                    
 
 localbin="${HOME}/.local/bin"
-xPATH="usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="${PATH}:${localbin}:${xPATH}"
+nvimPATH="/opt/nvim-linux-x86_64/bin"
+export PATH="${PATH}:${localbin}:${xPATH}:${nvimPATH}"
 
 # this PYTHONPATH setting requires `:` path seperators
 PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
