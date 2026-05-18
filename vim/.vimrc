@@ -97,6 +97,8 @@ endif
 "{{{ COLOURS
 set colorcolumn=80        " Highlight 80 character limit
 
+colorscheme torte
+colorscheme lunaperche
 " 2024.03 commented Cursor out
 " highlight ColorColumn ctermbg=234
 " thx https://www.ditig.com/256-colors-cheat-sheet
@@ -135,7 +137,7 @@ syntax on
 "{{{ Lightline Theme
 set laststatus=2
 set noshowmode
-let g:lightline = {  'colorscheme': 'lunaperche'  }
+let g:lightline = {  'colorscheme': 'wombat'  }
 
 "}}}
 
