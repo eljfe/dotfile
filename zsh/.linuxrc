@@ -90,13 +90,11 @@ elif [ $(hostname) = pinkthad ]; then
 fi
 
 
+alias l1='ls -A1 --color'
 alias ll='ls -lAFh --color'
 alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
 alias vv="vim $DOTFILES/vim/.vimrc"
-alias pingpi="ping 192.168.2.200"
-alias sshpi="ssh pi@pihole.local"
-alias sshob="ssh eljfe@obsequious.local" 	# obsequious.local breaks
-alias scanlocal="nmap -sn 192.168.2.0/24"
+# alias scanlocal="nmap -sn 192.168.2.0/24"
 alias ttc='xclip -selection clipboard'
 
