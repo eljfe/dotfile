@@ -21,8 +21,8 @@ nvimPATH="/opt/nvim-linux-x86_64/bin"
 export PATH="${PATH}:${localbin}:${xPATH}:${nvimPATH}"
 
 # this PYTHONPATH setting requires `:` path seperators
-PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
-export PYTHONPATH
+# PYTHONPATH="${HOME}/.local/lib/python-3x/site-packages:"
+# export PYTHONPATH
 
 
 ############# ALIAS's #############
