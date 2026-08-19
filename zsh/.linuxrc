@@ -96,8 +96,17 @@ alias vz="vim $ZDOTDIR/.zshrc"
 alias sz="source $ZDOTDIR/.zshrc"
 alias vv="vim $DOTFILES/vim/.vimrc"
 # alias scanlocal="nmap -sn 192.168.2.0/24"
-alias ttc='xclip -selection clipboard'
+alias ttc='xclip -selection clipboard'  # to the clipboard
 alias vpn-up="sudo wg-quick up wg0"
 alias vpn-dn="sudo wg-quick down wg0"
 alias vpn-stat="sudo wg show wg0"
 
+# --- trash-cli ---
+alias del='trash-put'           	# move to trash (don't alias rm!)
+alias tr='trash-put'            	# short form
+alias undelete='trash-restore'  	# interactive restore
+alias trashlist='trash-list'    	# list your trashed files
+alias untrash='trash-rm'        	# delete one item from trash for good
+alias empty-trash='trash-empty' 	# empty your trash
+alias trashlist-all='sudo trash-list --all-users'
+alias trash-empty-all='sudo trash-empty --all-users'
