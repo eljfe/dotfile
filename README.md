@@ -1,3 +1,3 @@
-> [!NOTE] moved
+> [NOTE!] moved
 
 # MOVED TO CODEBERG
