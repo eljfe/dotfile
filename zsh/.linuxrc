@@ -49,8 +49,8 @@ PYTHONPATH="${PYTHONPATH}:${DOTFILES}/../.local/lib/python-3x/site-packages"
 export PYTHONPATH
 
 # KITTYPATH="/Applications/kitty.app/Contents/MacOS/kitty"
-FINDATA_PATH="/srv/financials"
-export FINDATA_PATH
+# FINDATA_PATH="/srv/financials"
+# export FINDATA_PATH
 # export CMDSTAN_HOME
 # export JULIA_CMDSTAN_HOME
 
